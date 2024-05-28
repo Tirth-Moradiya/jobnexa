@@ -1,0 +1,24 @@
+.dashboard-boxes {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .dashboard-box {
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    padding: 20px;
+    flex: 1;
+    margin-right: 20px;
+  }
+  
+  .dashboard-box h3 {
+    margin-top: 0;
+    font-size: 18px;
+  }
+  
+  .dashboard-box .count {
+    font-size: 24px;
+    font-weight: bold;
+  }

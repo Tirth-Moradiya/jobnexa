@@ -1,0 +1,40 @@
+/* Header styles (you can reuse styles from previous examples) */
+
+/* Content styles */
+.content {
+    margin: 20px;
+  }
+  
+  .job-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjust as needed */
+    grid-gap: 20px;
+  }
+  
+  .job {
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    padding: 20px;
+  }
+  
+  .job h3 {
+    margin-top: 0;
+  }
+  
+  .job p {
+    margin: 10px 0;
+  }
+
+  .action-buttons {
+    margin-top: 10px;
+  }
+  
+  .action-buttons button {
+    font-size: 18px;
+    background-color: black;
+    color: #f8f9fa;
+    margin-top: 10px;
+    margin-right: 10px;
+  }
+  

@@ -1,0 +1,18 @@
+/* Header styles (you can reuse styles from previous examples) */
+
+/* Content styles */
+.content {
+    margin: 20px;
+  }
+  
+  .feedback-item {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .feedback-item div {
+    margin-bottom: 5px;
+  }
+  

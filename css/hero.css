@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.hero-section {
+ 
+    background-color: #f8f9fa;
+    /* padding: 100px 0; */
+    padding-top: 100px;
+
+}
+
+.hero-content {
+
+    padding-right: 10px;
+}
+
+.hero-content h1 {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    margin-top: 30px;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.buttons {
+    margin-top: 80px;
+}
+
+.buttons .btn {
+    margin-right: 10px;
+}
+
+.hero-image-container {
+    text-align: center;
+}
+
+.hero-image {
+    max-width: 650px;
+    height: 350px;
+    border-radius: 10px;
+}

@@ -1,0 +1,63 @@
+
+
+.search-job {
+    background-color: #f8f9fa;
+    padding: 50px 0;
+}
+
+.container {
+    max-width: 800px; /* Adjust container width as needed */
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+
+
+.container-job{
+    display: flex;
+    flex-direction: column;
+}
+
+.job-search-form {
+    margin-left: 100px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content:space-between;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    flex: 1 1 100%; /* Make each form-group occupy full width */
+}
+
+input[type="text"] {
+    width: calc(95% - 5px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 10px; /* Add margin bottom to create space between inputs */
+}
+
+.form-group button {    
+    height: 40px;
+    width: 250px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+
+
+
