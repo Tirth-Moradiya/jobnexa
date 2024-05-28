@@ -21,6 +21,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Execute the query
     if ($stmt->execute()) {
         echo "User signed up successfully!";
+        header("Location:login1.php");
+
     } else {
         echo "Error: " . $stmt->error;
     }

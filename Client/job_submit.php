@@ -21,8 +21,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Error: " . $stmt->error;
     }
 
- header("Location: post_job.php");
-     $stmt->close();
+    header("Location: post_job.php");
+    $stmt->close();
     $conn->close();
 }
 ?>

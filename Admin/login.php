@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         // Admin does not exist, redirect back to login page with error
         $error = "Invalid username or password. Please try again.";
-        header("Location: index.php?error=invalid" );
+        header("Location: index.php?error=invalid");
         exit;
     }
 } else {

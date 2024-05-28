@@ -17,11 +17,13 @@ if (!empty($logged_in_user)) {
 <!DOCTYPE html>
 
 <html lang="en">
+
 <head>
 
     <title>Job Portal</title>
     <link rel="stylesheet" href="./css/header.css">
 </head>
+
 <body>
     <header class="site-header">
         <div class="container">
@@ -33,10 +35,10 @@ if (!empty($logged_in_user)) {
                     <li><a href="index.php">Home</a></li>
                     <li><a href="./Client/about.php">About Us</a></li>
 
-                    <?php if (!empty($logged_in_user)) : ?>
-                        <?php if ($user_type === "user") : ?>
+                    <?php if (!empty($logged_in_user)): ?>
+                        <?php if ($user_type === "user"): ?>
                             <li><a href="./Client/applications.php">Applications</a></li>
-                        <?php elseif ($user_type === "employer") : ?>
+                        <?php elseif ($user_type === "employer"): ?>
                             <li><a href="./Client/post_job.php">Post Job</a></li>
                             <li><a href="./Client/view_applications.php">View Applications</a></li>
                         <?php endif; ?>
@@ -44,11 +46,11 @@ if (!empty($logged_in_user)) {
                             <span><?php echo $welcome_message; ?></span>
                             <a href="./Client/logout.php">Logout</a>
                         </li>
-                    <?php else : ?>
+                    <?php else: ?>
                         <li><a href="./Client/login1.php">Login</a></li>
                     <?php endif; ?>
 
-                    <?php if (empty($logged_in_user)) : ?>
+                    <?php if (empty($logged_in_user)): ?>
                         <li><a href="./Client/ex.php">Sign Up</a></li>
                     <?php endif; ?>
                 </ul>
@@ -56,4 +58,5 @@ if (!empty($logged_in_user)) {
         </div>
     </header>
 </body>
+
 </html>

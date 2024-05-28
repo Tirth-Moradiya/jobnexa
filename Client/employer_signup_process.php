@@ -13,12 +13,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $website = $_POST["website"];
 
     // Prepare and bind the SQL statement
-    $stmt = $conn->prepare("INSERT INTO employer (eid, ename, eemail, epassword, ecompany, industry_name, website) VALUES (?, ?, ?, ?, ?, ?, ?)");
+    $stmt = $conn->prepare("INSERT INTO employer (eid, ename, eemail, epassword, ecompany, industryname, website) VALUES (?, ?, ?, ?, ?, ?, ?)");
     $stmt->bind_param("sssssss", $eid, $ename, $eemail, $epassword, $ecompany, $industryname, $website);
 
     // Execute the query
     if ($stmt->execute()) {
         echo "Employer signed up successfully!";
+        header("Location:login1.php");
     } else {
         echo "Error: " . $stmt->error;
     }

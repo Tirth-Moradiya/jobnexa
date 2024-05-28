@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         // User does not exist or invalid credentials
         $error_message = "Invalid username or password";
-        
+
     }
 
     // Close statement
@@ -51,6 +51,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 // Close connection
 $conn->close();
 ?>
-
-
-
