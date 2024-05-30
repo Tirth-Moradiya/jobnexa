@@ -16,6 +16,9 @@
         <div class="container">
             <h1>Post a Job</h1>
             <form action="job_submit.php" method="post">
+                <label for="jtitle">Job Id</label>
+                <input type="text" id="jid" name="jid" required>
+
                 <label for="jtitle">Job Title</label>
                 <input type="text" id="jtitle" name="jtitle" required>
 

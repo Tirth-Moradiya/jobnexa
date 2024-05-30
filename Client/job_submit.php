@@ -2,6 +2,7 @@
 include "../Connection/db_conn.php"; // Make sure to create and configure your database connection here
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $jid = $_POST['jid'];
     $jtitle = $_POST['jtitle'];
     $company_name = $_POST['company_name'];
     $jlocation = $_POST['jlocation'];
@@ -11,8 +12,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $jdescription = $_POST['jdescription'];
 
     // Prepare and bind
-    $stmt = $conn->prepare("INSERT INTO job (jtitle, jdescription, company_name, jlocation, jsalary, cat_id, eid) VALUES (?, ?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("sssdisi", $jtitle, $jdescription, $company_name, $jlocation, $jsalary, $cat_id, $eid);
+    $stmt = $conn->prepare("INSERT INTO job (jid,jtitle, jdescription, company_name, jlocation, jsalary, cat_id, eid) VALUES (?,?, ?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("sssssisi", $jid, $jtitle, $jdescription, $company_name, $jlocation, $jsalary, $cat_id, $eid);
 
     // Execute the query
     if ($stmt->execute()) {

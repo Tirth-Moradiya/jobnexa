@@ -3,7 +3,8 @@
 
 <head>
 
-    <link rel="stylesheet" href="./css/list_job.css">
+    <link rel="stylesheet" href="./css/list_job.css
+    ">
 
 </head>
 
@@ -15,7 +16,10 @@
             <div class="job-posting">
                 <?php
                 // Include database connection file
+                
                 include "./Connection/db_conn.php";
+
+
 
                 // Fetch job postings from the database
                 $query = "SELECT * FROM job";
@@ -31,13 +35,17 @@
                         echo '<p>Location: ' . $row["jlocation"] . '</p>';
                         echo '<p>Description: ' . $row["jdescription"] . '</p>';
                         echo '<p>Salary: $' . $row["jsalary"] . '</p>';
-                        echo '<button class="apply-btn">Apply</button>';
+                        if (isset($_SESSION['user_type']) && $_SESSION['user_type'] == 'employer') {
+                            echo '<a href=".../../Client/edit_job.php?jid=' . $row["jid"] . '"><button class="edit-btn">Edit</button></a>';
+                            echo '<a href=".../../Client/delete_job.php?jid=' . $row["jid"] . '"><button class="delete-btn">Delete</button></a>';
+                        } else {
+                            echo '<button class="apply-btn">Apply</button>';
+                        }
                         echo '</div>';
                     }
                 } else {
                     echo "No job postings found.";
                 }
-
                 // Close database connection
                 $conn->close();
                 ?>

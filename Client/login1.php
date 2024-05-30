@@ -1,4 +1,5 @@
 <?php
+session_start();
 include "../Connection/db_conn.php";
 // Check connection
 if ($conn->connect_error) {
@@ -35,9 +36,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Check if user exists
     if ($result->num_rows == 1) {
         // User exists, start session
-        session_start();
         $_SESSION["username"] = $username;
         $_SESSION["user_type"] = $user_type;
+        // echo "Session variables set. Username: " . $_SESSION["username"] . ", User Type: " . $_SESSION["user_type"];
+
         header("Location: ../index.php"); // Redirect to index page (login page)
         exit();
     } else {

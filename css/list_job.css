@@ -1,21 +1,32 @@
+/* list_job.css */
+
 .container-list-job {
-    max-width: 800px; /* Adjust container width as needed */
+    max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
 }
 
 .section-title {
-    font-size: 24px;
-    font-weight: bold;
+    text-align: center;
+    font-size: 2em;
     margin-bottom: 20px;
 }
 
+.job-postings {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
 .job-posting {
-    background-color: #f9f9f9;
-    border-radius: 8px;
+    background-color:blue;
+    border: 1px solid #ddd;
+    border-radius: 5px;
     padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: calc(33.333% - 20px);
+    /* Three items per row */
+    box-sizing: border-box;
 }
 
 .job-posting h3 {
@@ -23,33 +34,58 @@
 }
 
 .job-posting p {
-    margin: 5px 0;
+    margin: 10px 0;
 }
 
-.apply-btn {
+.apply-btn{
+    padding: 10px 20px;
     background-color: #007bff;
-    color: #fff;
+    color: white;
     border: none;
-    border-radius: 4px;
-    padding: 8px 16px;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+}
+.edit-btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.delete-btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-.apply-btn:hover {
-    background-color: #0056b3;
+.bm {
+    text-align: center;
+    margin-top: 20px;
 }
 
 .bm button {
+    padding: 10px 20px;
     background-color: #007bff;
-    color: #fff;
+    color: white;
     border: none;
-    border-radius: 4px;
-    padding: 8px 16px;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
-.bm button:hover {
-    background-color: #0056b3;
+@media (max-width: 768px) {
+    .job-posting {
+        width: calc(50% - 20px);
+        /* Two items per row on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .job-posting {
+        width: 100%;
+        /* One item per row on very small screens */
+    }
 }
