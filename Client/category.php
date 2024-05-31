@@ -15,25 +15,32 @@
     <h2>Explore By Category</h2>
     <div class="row">
       <?php
-      $categories = array(
-        array("id" => 1, "name" => "IT", "icon" => "fa-laptop", "vacancy_count" => 10),
-        array("id" => 2, "name" => "Marketing", "icon" => "fa-bullhorn", "vacancy_count" => 5),
-        array("id" => 3, "name" => "Finance", "icon" => "fa-money", "vacancy_count" => 8),
-        array("id" => 4, "name" => "Healthcare", "icon" => "fa-medkit", "vacancy_count" => 12),
-        array("id" => 5, "name" => "Education", "icon" => "fa-book", "vacancy_count" => 7),
-        array("id" => 5, "name" => "Education", "icon" => "fa-book", "vacancy_count" => 7)
-      );
-      foreach ($categories as $category) {
-        echo "
-          <div class='col-md-4'>
-            <div class='category-card'>
-              <i class='fa {$category['icon']}' aria-hidden='true'></i>
-              <h3>{$category['name']}</h3>
-              <p>Current Vacancies: {$category['vacancy_count']}</p>
+
+      include ("./Connection/db_conn.php");
+
+      // Fetch categories from the database
+      $query = "SELECT cat_id, cat_name FROM category";
+      $result = $conn->query($query);
+
+      if ($result->num_rows > 0) {
+        // Output data of each row
+        while ($row = $result->fetch_assoc()) {
+          echo "
+            <div class='col-md-4'>
+              <div class='category-card'>
+              
+                <h3>{$row['cat_name']}</h3>
+       
+              </div>
             </div>
-          </div>
-        ";
+          ";
+        }
+      } else {
+        echo "<p>No categories found</p>";
       }
+
+      // Close connection
+      $conn->close();
       ?>
     </div>
   </div>
