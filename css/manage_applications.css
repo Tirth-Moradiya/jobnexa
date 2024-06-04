@@ -1,0 +1,73 @@
+.application-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.application-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.application-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.application-table th,
+.application-table td {
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.application-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.application-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.application-table tbody tr:hover {
+    background-color: #e2e2e2;
+}
+
+.application-table form {
+    display: flex;
+    align-items: center;
+    /* Vertically center items */
+}
+
+.application-table select,
+.application-table button {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.application-table select {
+    flex: 1;
+    margin-right: 10px;
+    width: 100px;
+}
+
+.application-table button {
+    flex-shrink: 0;
+    background-color: #007bff;
+    color: #fff;
+}
+
+.application-table button:hover {
+    background-color: #0056b3;
+}
+
+.application-table a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.application-table a:hover {
+    text-decoration: underline;
+}

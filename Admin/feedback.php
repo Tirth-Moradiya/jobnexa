@@ -13,7 +13,7 @@
 <body>
   <?php include "sidebar.php"; ?>
   <div class="content">
-    <h2>All Feedback</h2>
+
 
     <div id="feedback-list">
       <?php

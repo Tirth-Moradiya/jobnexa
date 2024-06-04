@@ -38,8 +38,9 @@
                         if (isset($_SESSION['user_type']) && $_SESSION['user_type'] == 'employer') {
                             echo '<a href=".../../Client/edit_job.php?jid=' . $row["jid"] . '"><button class="edit-btn">Edit</button></a>';
                             echo '<a href=".../../Client/delete_job.php?jid=' . $row["jid"] . '"><button class="delete-btn">Delete</button></a>';
-                        } else {
-                            echo '<button class="apply-btn">Apply</button>';
+                        }
+                        if (isset($_SESSION['user_type']) && $_SESSION['user_type'] != 'employer') {
+                            echo '<a href=".../../Client/job_application_form.php?jid=' . $row["jid"] . '"><button class="apply-btn">Apply</button></a>';
                         }
                         echo '</div>';
                     }

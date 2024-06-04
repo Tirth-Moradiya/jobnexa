@@ -13,7 +13,7 @@
   <?php include "sidebar.php" ?>
   <div class="content">
 
-    <h2>All Users</h2>
+
 
     <table>
       <thead>

@@ -11,7 +11,7 @@
 <body>
     <?php include "sidebar.php"; ?>
     <div class="content">
-        <h2>All Jobs</h2>
+
 
         <div class="job-container">
             <?php

@@ -44,13 +44,14 @@
                     </ul>
                 </div>
                 <div class="footer-section contact-form">
-                    <h3>Feed back</h3>
-                    <form>
+                    <h3>Feedback</h3>
+                    <form action="./Client/feedback.php" method="POST">
                         <input type="text" name="name" class="text-input" placeholder="Your Name">
                         <input type="email" name="email" class="text-input" placeholder="Your Email Address">
                         <textarea name="message" class="text-input" placeholder="Your Message"></textarea>
                         <button type="submit" class="btn">Send</button>
                     </form>
+
                 </div>
             </div>
         </div>

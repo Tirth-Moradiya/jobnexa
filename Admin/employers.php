@@ -13,7 +13,6 @@
 <body>
   <?php include "sidebar.php"; ?>
   <div class="content">
-    <h2>All Employers</h2>
 
     <table>
       <thead>

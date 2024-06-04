@@ -37,10 +37,10 @@ if (!empty($logged_in_user)) {
 
                     <?php if (!empty($logged_in_user)): ?>
                         <?php if ($user_type === "user"): ?>
-                            <li><a href="./Client/applications.php">Applications</a></li>
+                            <li><a href="./Client/application.php">Applications</a></li>
                         <?php elseif ($user_type === "employer"): ?>
                             <li><a href="./Client/post_job.php">Post Job</a></li>
-                            <li><a href="./Client/view_applications.php">View Applications</a></li>
+                            <li><a href="./Client/manage_applications.php">View Applications</a></li>
                         <?php endif; ?>
                         <li>
                             <span><?php echo $welcome_message; ?></span>

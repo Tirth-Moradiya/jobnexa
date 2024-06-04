@@ -1,0 +1,88 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.application-container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 80%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.application-title {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Table Styles */
+.application-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.application-table thead {
+    background-color: black;
+    color: #fff;
+}
+
+.application-table th,
+.application-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.application-table th {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.application-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.application-table tbody tr:hover {
+    background-color: #ddd;
+}
+
+.application-table tbody td a {
+    color: green;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.application-table tbody td a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .application-container {
+        width: 95%;
+    }
+
+    .application-title {
+        font-size: 20px;
+    }
+
+    .application-table th,
+    .application-table td {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
