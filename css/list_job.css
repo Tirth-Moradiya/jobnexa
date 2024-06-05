@@ -1,100 +1,112 @@
-/* list_job.css */
-
-.container-list-job {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.section-title {
-    text-align: center;
-    font-size: 2.5em;
-    margin-bottom: 30px;
-    color: #333;
-}
-
-.job-postings {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
-
-.job-posting {
-    text-align: center;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 20px;
-    width: calc(33.333%-20px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-    box-sizing: border-box;
-}
-
-.job-posting:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.job-posting h3 {
-    margin-top: 0;
-    color: #007bff;
-    font-size: 1.5em;
-}
-
-.job-posting p {
-    margin: 10px 0;
-    color: #555;
-}
-
-.apply-btn,
-.edit-btn,
-.delete-btn {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
-    margin-right: 10px;
-}
-
-.apply-btn:hover,
-.edit-btn:hover,
-.delete-btn:hover {
-    background-color: #0056b3;
-}
-
-.bm {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.bm button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
-}
-
-.bm button:hover {
-    background-color: #0056b3;
-}
-
-@media (max-width: 768px) {
-    .job-posting {
-        width: calc(50% - 20px);
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+        margin: 0;
+        padding: 0;
     }
-}
 
-@media (max-width: 480px) {
-    .job-posting {
-        width: 100%;
+    .container-list-job {
+        max-width: 1200px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
-}
+
+    .section-title {
+        text-align: center;
+        font-size: 28px;
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    .job-postings {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .job-posting {
+        background-color: #fafafa;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 20px;
+        flex: 1 1 calc(33.333% - 40px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .job-posting:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .job-posting h3 {
+        margin-top: 0;
+        font-size: 22px;
+        color: #333;
+    }
+
+    .job-posting p {
+        margin: 10px 0;
+        color: #666;
+    }
+
+    .job-posting .edit-btn,
+    .job-posting .delete-btn,
+    .job-posting .apply-btn {
+        display: inline-block;
+        padding: 10px 15px;
+        margin: 5px 0;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+    }
+
+    .edit-btn {
+        background-color: #4caf50;
+        color: #fff;
+    }
+
+    .delete-btn {
+        background-color: #f44336;
+        color: #fff;
+    }
+
+    .apply-btn {
+        background-color: #008cba;
+        color: #fff;
+    }
+
+    .bm {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .bm button {
+        padding: 10px 20px;
+        background-color: #333;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    .bm button:hover {
+        background-color: #555;
+    }
+
+    @media (max-width: 768px) {
+        .job-posting {
+            flex: 1 1 calc(50% - 20px);
+        }
+    }
+
+    @media (max-width: 480px) {
+        .job-posting {
+            flex: 1 1 100%;
+        }
+    }

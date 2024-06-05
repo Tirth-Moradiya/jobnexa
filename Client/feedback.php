@@ -1,42 +1,35 @@
 <?php
-include "../Connection/db_conn.php";
+session_start();
+include ("../Connection/db_conn.php");
 
-// Check if the form is submitted
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Get form data
     $name = $_POST['name'];
     $email = $_POST['email'];
     $message = $_POST['message'];
 
-    // Determine user type and retrieve user ID from session
-    session_start();
-    $uid = isset($_SESSION["uid"]) ? $_SESSION["uid"] : "";
-    $eid = isset($_SESSION["eid"]) ? $_SESSION["eid"] : "";
-
-    // Determine the appropriate ID to use based on user type
-    $user_type = isset($_SESSION["user_type"]) ? $_SESSION["user_type"] : "";
-    $id_to_use = "";
-    if ($user_type === "user" && $uid !== "") {
-        $id_to_use = $uid;
-    } elseif ($user_type === "employer" && $eid !== "") {
-        $id_to_use = $eid;
-    } else {
-        // Handle the case where the user ID or employer ID is not set
-        echo "Error: User ID or Employer ID not found.";
-        exit; // Exit the script to prevent further execution
+    // Validate form data
+    if (empty($name) || empty($email) || empty($message)) {
+        echo "All fields are required!";
+        exit;
     }
 
-    // Insert feedback into the database
-    $insert_query = "INSERT INTO feedback (user_id, name, email, message) VALUES ('$id_to_use', '$name', '$email', '$message')";
-    $result = $conn->query($insert_query);
+    // Prepare and bind
+    $stmt = $conn->prepare("INSERT INTO feedback ( name, email, message) VALUES (?, ?, ?)");
+    $stmt->bind_param("sss", $name, $email, $message);
 
-    if ($result) {
-        echo "Feedback submitted successfully.";
+    // Execute the query
+    if ($stmt->execute()) {
+        echo "Feedback submitted successfully!";
+        header("Location:../index.php");
     } else {
-        echo "Error: " . $conn->error;
+        echo "Error: " . $stmt->error;
     }
+
+    // Close the statement and connection
+    $stmt->close();
+    $conn->close();
+} else {
+    echo "Invalid request method!";
 }
-
-// Close database connection
-$conn->close();
 ?>

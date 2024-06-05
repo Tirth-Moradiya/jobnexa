@@ -1,33 +1,47 @@
-.dashboard-boxes {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-  }
-  
-  .dashboard-box {
-    background-color: #f8f9fa;
-    border: 1px solid #ced4da;
-    border-radius: 5px;
-    padding: 20px;
-    flex: 1;
-    margin-right: 20px;
-  }
-  
-  .dashboard-box h3 {
-    margin-top: 0;
-    font-size: 18px;
-  }
-  
-  .dashboard-box .count {
-    font-size: 24px;
-    font-weight: bold;
-  }
+.content {
+  margin-left: 260px;
+  /* Adjust this value based on your sidebar width */
+  padding: 20px;
+}
 
-    .chart-container {
-      width: 80%;
-      margin: 20px auto;
-      padding: 20px;
-      background-color: #ffffff;
-      border: 1px solid #ddd;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
+.dashboard-boxes {
+  display: flex;
+  flex-wrap: wrap;
+  /* Allow boxes to wrap to the next line if necessary */
+}
+
+.dashboard-box {
+  background-color: #f8f9fa;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  padding: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  /* Add margin bottom to create space between boxes */
+  flex: 1;
+  min-width: 200px;
+  /* Set minimum width for the boxes */
+}
+
+.dashboard-box h3 {
+  margin-top: 0;
+  font-size: 18px;
+}
+
+.dashboard-box .count {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.chart-container {
+  width: calc(100% - 280px);
+  /* Adjust width based on sidebar width */
+  margin-top: 20px;
+  /* Adjust margin top to create space between boxes and chart */
+  margin-left: 260px;
+  /* Match the margin-left of the content */
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}

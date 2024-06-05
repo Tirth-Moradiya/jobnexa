@@ -6,62 +6,52 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="../css/employers.css">
-
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 
 <body>
   <?php include "sidebar.php"; ?>
-  <div class="content">
+  <div class="w-4/5 ml-72">
+    <div class="mt-10 mx-8">
+      <table class="table-auto w-full bg-white border border-gray-200">
+        <thead class="bg-gray-50">
+          <tr>
+            <th class="px-4 py-2 bg-gray-50 border-b border-gray-200">ID</th>
+            <th class="px-4 py-2 bg-gray-50 border-b border-gray-200">Employer Name</th>
+            <th class="px-4 py-2 bg-gray-50 border-b border-gray-200">Email</th>
+            <th class="px-4 py-2 bg-gray-50 border-b border-gray-200">Password</th>
+            <th class="px-4 py-2 bg-gray-50 border-b border-gray-200">Company Name</th>
+            <th class="px-4 py-2 bg-gray-50 border-b border-gray-200">Industry</th>
+            <th class="px-4 py-2 bg-gray-50 border-b border-gray-200">Website</th>
+            <th class="px-4 py-2 bg-gray-50 border-b border-gray-200">Action</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-200">
+          <?php
+          include "../Connection/db_conn.php";
+          $sql = "SELECT * FROM employer";
+          $result = $conn->query($sql);
 
-    <table>
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Employer Name</th>
-          <th>Email</th>
-          <th>Password</th>
-          <th>Company Name</th>
-          <th>Industry</th>
-          <th>Website</th>
-          <th>Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        <?php
-        include "../Connection/db_conn.php";
-        // Your PHP code to fetch employers from the database and loop through them to display here
-        // For demonstration purpose, I'm using static data
-        
-        // $employers = [
-        //   ["id" => 1, "employer name" => "Company A", "email" => "companya@example.com","password"=>"123450","company name"=>"abc cmp","industry"=>"yuy","website"=>"xyz.com"],
-        //   ["id" => 2, "employer name" => "Company B", "email" => "companyb@example.com","password"=>"123450","company name"=>"abc cmp","industry"=>"yuy","website"=>"xyz.com"],
-        //   ["id" => 3, "employer name" => "Company C", "email" => "companyc@example.com","password"=>"123450","company name"=>"abc cmp","industry"=>"yuy","website"=>"xyz.com"],
-        // ];
-        
-        $sql = "select *from employer";
-        $result = $conn->query($sql);
-
-
-
-        if ($result->num_rows > 0) {
-          while ($row = $result->fetch_assoc()) {
-            echo "<tr>";
-            echo "<td>" . $row["eid"] . "</td>";
-            echo "<td>" . $row["ename"] . "</td>";
-            echo "<td>" . $row["eemail"] . "</td>";
-            echo "<td>" . $row["epassword"] . "</td>";
-            echo "<td>" . $row["ecompany"] . "</td>";
-            echo "<td>" . $row["industryname"] . "</td>";
-            echo "<td>" . $row["website"] . "</td>";
-
-            echo "<td><button onclick='deleteEmployer(" . $row["eid"] . ")'>Delete</button></td>";
-            echo "</tr>";
+          if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+              echo "<tr>";
+              echo "<td class='px-4 py-2 border-b border-gray-200'>" . $row["eid"] . "</td>";
+              echo "<td class='px-4 py-2 border-b border-gray-200'>" . $row["ename"] . "</td>";
+              echo "<td class='px-4 py-2 border-b border-gray-200'>" . $row["eemail"] . "</td>";
+              echo "<td class='px-4 py-2 border-b border-gray-200'>" . $row["epassword"] . "</td>";
+              echo "<td class='px-4 py-2 border-b border-gray-200'>" . $row["ecompany"] . "</td>";
+              echo "<td class='px-4 py-2 border-b border-gray-200'>" . $row["industryname"] . "</td>";
+              echo "<td class='px-4 py-2 border-b border-gray-200'>" . $row["website"] . "</td>";
+              echo "<td class='px-4 py-2 border-b border-gray-200'><button onclick='deleteEmployer(" . $row["eid"] . ")' class='bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-3 rounded'>Delete</button></td>";
+              echo "</tr>";
+            }
+          } else {
+            echo "<tr><td colspan='10' class='px-4 py-2 whitespace-nowrap text-center'>No employers found.</td></tr>";
           }
-        }
-        ?>
-      </tbody>
-    </table>
+          ?>
+        </tbody>
+      </table>
+    </div>
   </div>
 </body>
 
