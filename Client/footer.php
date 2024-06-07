@@ -11,51 +11,53 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 
 <body>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section about">
-
-                    <h3>About Us</h3>
-                    <p>Connecting talent with opportunity.</p>
-                    <div class="contact">
-                        <span><i class="fas fa-envelope"></i> contact@jobnexa.com</span>
-                        <span><i class="fas fa-phone"></i> +91 9988745632</span>
+    <footer class="bg-blue-900 text-white py-12 font-serif">
+        <div class="mx-auto px-32">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="footer-section">
+                    <h3 class="text-xl font-semibold mb-4">About Us</h3>
+                    <p class="text-gray-400">Connecting talent with opportunity.</p>
+                    <div class="mt-4">
+                        <span class="mr-2"><i class="fas fa-envelope"></i> contact@jobnexa.com</span><br>
+                        <span class="mt-10"><i class="fas fa-phone"></i> +91 9988745632</span>
                     </div>
-                    <div class="socials">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <div class="socials mt-4">
+                        <a href="#" class="text-white mr-2"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-white mr-2"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white mr-2"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
-                <div class="footer-section links">
-                    <h3>Quick Links</h3>
+                <div class="footer-section">
+                    <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Jobs</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="#" class="text-gray-400 no-underline hover:text-white">Home</a></li>
+                        <li><a href="#" class="text-gray-400 no-underline hover:text-white">Jobs</a></li>
+                        <li><a href="#" class="text-gray-400 no-underline hover:text-white">About</a></li>
+                        <li><a href="#" class="text-gray-400 no-underline hover:text-white">Contact</a></li>
                     </ul>
                 </div>
-                <div class="footer-section contact-form">
-                    <h3>Feedback</h3>
+                <div class="footer-section">
+                    <h3 class="text-xl font-semibold mb-4">Feedback</h3>
                     <form action="./Client/feedback.php" method="POST">
-                        <input type="text" name="name" class="text-input" placeholder="Your Name">
-                        <input type="email" name="email" class="text-input" placeholder="Your Email Address">
-                        <textarea name="message" class="text-input" placeholder="Your Message"></textarea>
-                        <button type="submit" class="btn">Send</button>
+                        <input type="text" name="name" class="text-input block w-full mb-4 p-2 rounded-lg"
+                            placeholder="Your Name">
+                        <input type="email" name="email" class="text-input block w-full mb-4 p-2 rounded-lg"
+                            placeholder="Your Email Address">
+                        <textarea name="message" class="text-input block w-full mb-4 p-2 rounded-lg resize-none h-32"
+                            placeholder="Your Message"></textarea>
+                        <button type="submit"
+                            class=" bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600">Send</button>
                     </form>
-
                 </div>
             </div>
         </div>
-        <div class="footer-bottom">
+        <div class="footer-bottom text-center mt-8">
             &copy; 2024 JobNexa. All rights reserved.
         </div>
     </footer>

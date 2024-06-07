@@ -1,13 +1,9 @@
 <?php
+// Start session
 session_start();
-include "../Connection/db_conn.php";
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
 
-// Initialize error message
-$error_message = "";
+include "../Connection/db_conn.php"; // Make sure to create and configure your database connection here
+
 
 // Check if form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -18,9 +14,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Prepare SQL statement based on user type
     if ($user_type === "user") {
-        $stmt = $conn->prepare("SELECT * FROM user WHERE uname = ? AND upassword = ?");
+        $stmt = $conn->prepare("SELECT uid FROM user WHERE uname = ? AND upassword = ?");
     } elseif ($user_type === "employer") {
-        $stmt = $conn->prepare("SELECT * FROM employer WHERE ename = ? AND epassword = ?");
+        $stmt = $conn->prepare("SELECT eid FROM employer WHERE ename = ? AND epassword = ?");
     } else {
         // Invalid user type
         die("Invalid user type");
@@ -38,9 +34,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // User exists, start session
         $_SESSION["username"] = $username;
         $_SESSION["user_type"] = $user_type;
-        // echo "Session variables set. Username: " . $_SESSION["username"] . ", User Type: " . $_SESSION["user_type"];
 
-        header("Location: ../index.php"); // Redirect to index page (login page)
+        // Fetch and store eid/uid based on user type
+        $row = $result->fetch_assoc();
+        if ($user_type === "user") {
+            $_SESSION["uid"] = $row["uid"];
+        } elseif ($user_type === "employer") {
+            $_SESSION["eid"] = $row["eid"];
+        }
+
+        // Redirect to index page (login page)
+        header("Location: ../index.php");
         exit();
     } else {
         // User does not exist or invalid credentials
@@ -53,6 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 // Close connection
 $conn->close();
+
 ?>
 
 <!DOCTYPE html>
@@ -91,7 +96,7 @@ $conn->close();
                 </div>
                 <button type="submit" class="btn">Login</button>
             </form>
-            <div class="error-message" style="color: red;"><?php echo $error_message; ?></div>
+            <!-- <div class="error-message" style="color: red;"><?php echo $error_message; ?></div> -->
             <div class="form-links-fp">
                 <a href="forgot-password.html">Forgot Password?</a>
             </div>

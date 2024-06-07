@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin Dashboard</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
   <style>
     /* Additional CSS for Active Link */
     .active {
@@ -46,7 +47,7 @@
 
 <body class="font-serif bg-gray-100">
 
-  <header class="bg-white shadow py-4 px-8">
+  <header class="bg-white shadow py-4 px-8 fixed w-full z-10">
     <div class="container mx-auto flex justify-between items-center">
       <h1 class="text-lg font-bold text-gray-900">Job Nexa</h1>
       <div class="flex items-center">
@@ -61,25 +62,28 @@
     </div>
   </header>
 
-  <div class="flex h-0">
-    <div class="w-1/5 p-4 mt-5">
-      <!-- <h2 class="text-center text-lg font-bold mb-4">Job Nexa</h2> -->
-      <ul class="space-y-2 ">
+  <div class="flex">
+    <div class="w-1/5 fixed h-full bg-white shadow-md p-4 pt-20 sidebar">
+      <ul class="space-y-2">
         <li><a href="admin_dashboard.php" id="dashboard-link" onclick="setActiveLink(this)"
-            class="block py-2 text-center px-4 rounded hover:bg-red-500 hover:text-white active">Dashboard</a></li>
+            class="block py-2 text-center px-4 rounded hover:bg-red-500 hover:text-white">Dashboard</a></li>
         <li><a href="jobs.php" id="jobs-link" onclick="setActiveLink(this)"
-            class="block py-2 mt-4 text-center px-4 rounded hover:bg-red-500 hover:text-white active">Jobs</a></li>
+            class="block py-2 text-center px-4 rounded hover:bg-red-500 hover:text-white">Jobs</a></li>
         <li><a href="users.php" id="users-link" onclick="setActiveLink(this)"
-            class="block py-2 mt-4 text-center px-4 rounded hover:bg-red-500 hover:text-white active">Users</a></li>
+            class="block py-2 text-center px-4 rounded hover:bg-red-500 hover:text-white">Users</a></li>
         <li><a href="employers.php" id="employers-link" onclick="setActiveLink(this)"
-            class="block py-2 mt-4 text-center px-4 rounded hover:bg-red-500 hover:text-white active">Employers</a></li>
+            class="block py-2 text-center px-4 rounded hover:bg-red-500 hover:text-white">Employers</a></li>
         <li><a href="category.php" id="category-link" onclick="setActiveLink(this)"
-            class="block py-2 mt-4 text-center px-4 rounded hover:bg-red-500 hover:text-white active">Category</a></li>
+            class="block py-2 text-center px-4 rounded hover:bg-red-500 hover:text-white">Category</a></li>
         <li><a href="feedback.php" id="feedback-link" onclick="setActiveLink(this)"
-            class="block py-2 mt-4 text-center px-4 rounded hover:bg-red-500 hover:text-white active">Feedbacks</a></li>
+            class="block py-2 text-center px-4 rounded hover:bg-red-500 hover:text-white">Feedbacks</a></li>
       </ul>
     </div>
 
+    <div class="ml-1/5 w-4/5 p-8 pt-0">
+      <h2 id="page-heading" class="text-2xl font-bold mb-4">Dashboard</h2>
+      <!-- Your page content goes here -->
+    </div>
   </div>
 
 </body>

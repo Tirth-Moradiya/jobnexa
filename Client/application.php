@@ -32,52 +32,55 @@ $conn->close();
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
     <title>My Job Applications</title>
-    <link rel="stylesheet" href="../css/applications.css">
-    <link rel="stylesheet" href="../css/header.css">
-
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="../css/applications.css"> -->
 </head>
 
-<body>
-    <!-- <div>
+<body class="bg-gray-100">
+    <div>
         <?php include "header.php"; ?>
-    </div> -->
-    <div class="application-container">
-        <h2 class="application-title">My Job Applications</h2>
+    </div>
+
+    <div class="container mx-auto px-4 py-28 font-serif text-blue-900">
+        <h2 class="text-2xl font-bold text-center mb-8 mt-3 ">My Job Applications</h2>
         <?php if ($result->num_rows > 0): ?>
-            <table class="application-table">
-                <thead>
-                    <tr>
-                        <th>Job Title</th>
-                        <th>Applicant Name</th>
-                        <th>Email</th>
-                        <th>Cover Letter</th>
-                        <th>Resume</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php while ($row = $result->fetch_assoc()): ?>
+            <div class="overflow-x-auto">
+                <table class="table-auto min-w-full bg-white shadow-md rounded-lg overflow-hidden">
+                    <thead class="bg-gray-200 text-black">
                         <tr>
-                            <td><?php echo htmlspecialchars($row['job_title']); ?></td>
-                            <td><?php echo htmlspecialchars($row['applicant_name']); ?></td>
-                            <td><?php echo htmlspecialchars($row['applicant_email']); ?></td>
-                            <td><?php echo htmlspecialchars($row['cover_letter']); ?></td>
-                            <td>
-                                <?php
-                                $resumePath = htmlspecialchars($row['resume_path']);
-                                $fullPath = "../resume_folder/" . $resumePath;
-                                echo "<a href='$fullPath' target='_blank'>View Resume</a>";
-                                ?>
-                            </td>
-                            <td><?php echo htmlspecialchars($row['application_status']); ?></td>
+                            <th class="py-3 px-4 uppercase font-semibold text-left">Job Title</th>
+                            <th class="py-3 px-4 uppercase font-semibold text-left">Applicant Name</th>
+                            <th class="py-3 px-4 uppercase font-semibold text-left">Email</th>
+                            <th class="py-3 px-4 uppercase font-semibold text-left">Cover Letter</th>
+                            <th class="py-3 px-4 uppercase font-semibold text-left">Resume</th>
+                            <th class="py-3 px-4 uppercase font-semibold text-left">Status</th>
                         </tr>
-                    <?php endwhile; ?>
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody class="text-gray-600">
+                        <?php while ($row = $result->fetch_assoc()): ?>
+                            <tr>
+                                <td class="py-3 px-4"><?php echo htmlspecialchars($row['job_title']); ?></td>
+                                <td class="py-3 px-4"><?php echo htmlspecialchars($row['applicant_name']); ?></td>
+                                <td class="py-3 px-4"><?php echo htmlspecialchars($row['applicant_email']); ?></td>
+                                <td class="py-3 px-4"><?php echo htmlspecialchars($row['cover_letter']); ?></td>
+                                <td class="py-3 px-4">
+                                    <?php
+                                    $resumePath = htmlspecialchars($row['resume_path']);
+                                    $fullPath = "../resume_folder/" . $resumePath;
+                                    echo "<a href='$fullPath' class='text-blue-500 hover:underline' target='_blank'>View Resume</a>";
+                                    ?>
+                                </td>
+                                <td class="py-3 px-4"><?php echo htmlspecialchars($row['application_status']); ?></td>
+                            </tr>
+                        <?php endwhile; ?>
+                    </tbody>
+                </table>
+            </div>
         <?php else: ?>
-            <p>No job applications found.</p>
+            <p class="text-center text-gray-600 mt-8">No job applications found.</p>
         <?php endif; ?>
     </div>
 </body>

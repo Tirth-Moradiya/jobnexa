@@ -11,7 +11,8 @@
 
 <body>
   <?php include "sidebar.php"; ?>
-  <div class="w-4/5 ml-72">
+  <div class="w-4/5 ml-72 p-4 mt-5">
+    <h2 class="text-3xl font-bold mb-6">All Employers</h2>
     <div class="mt-10 mx-8">
       <table class="table-auto w-full bg-white border border-gray-200">
         <thead class="bg-gray-50">
@@ -42,7 +43,12 @@
               echo "<td class='px-4 py-2 border-b border-gray-200'>" . $row["ecompany"] . "</td>";
               echo "<td class='px-4 py-2 border-b border-gray-200'>" . $row["industryname"] . "</td>";
               echo "<td class='px-4 py-2 border-b border-gray-200'>" . $row["website"] . "</td>";
-              echo "<td class='px-4 py-2 border-b border-gray-200'><button onclick='deleteEmployer(" . $row["eid"] . ")' class='bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-3 rounded'>Delete</button></td>";
+              echo "<td class='px-4 py-2 border-b border-gray-200'>";
+              echo "<form method='POST' action='delete_employer.php'>";
+              echo "<input type='hidden' name=eid' value='" . $row['eid'] . "'>";
+              echo "<button type='submit' class='bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded'>Delete</button>";
+              echo "</form>";
+              echo "</td>";
               echo "</tr>";
             }
           } else {

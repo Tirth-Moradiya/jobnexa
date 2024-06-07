@@ -49,7 +49,9 @@ $conn->close();
 <body>
 
   <?php include "sidebar.php"; ?>
-  <div class="content ml-80 mt-10">
+  <div class="content ml-72 p-4 mt-5">
+    <h2 class="text-3xl font-bold mb-6">Dashboard Overview</h2>
+
     <div class="dashboard-boxes">
       <div class="dashboard-box">
         <h3>Total Users</h3>
