@@ -2,6 +2,7 @@
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
+
 $logged_in_user = isset($_SESSION["username"]) ? $_SESSION["username"] : "";
 $user_type = isset($_SESSION["user_type"]) ? $_SESSION["user_type"] : "";
 
@@ -45,6 +46,10 @@ if (!empty($logged_in_user)) {
                             <?php if ($user_type === "user"): ?>
                                 <li><a href="./Client/application.php"
                                         class="text-white no-underline hover:text-white">Applications</a></li>
+                                <li><a href="./Client/all_jobs.php" class="text-white no-underline hover:text-white">Jobs</a>
+                                </li>
+                                <li><a href="./Client/profile.php" class="text-white no-underline hover:text-white">Profile</a>
+                                </li>
                             <?php elseif ($user_type === "employer"): ?>
                                 <li><a href="./Client/post_job.php" class="text-white no-underline hover:text-white">Post
                                         Job</a>
@@ -52,6 +57,8 @@ if (!empty($logged_in_user)) {
                                 <li><a href="./Client/manage_applications.php"
                                         class="text-white no-underline hover:text-white">View
                                         Applications</a></li>
+                                <li><a href="./Client/profile.php" class="text-white no-underline hover:text-white">Profile</a>
+                                </li>
                             <?php endif; ?>
 
 

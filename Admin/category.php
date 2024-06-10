@@ -35,7 +35,7 @@ $conn->close();
 
 <body class="bg-gray-100 font-serif">
     <?php include "sidebar.php"; ?>
-    <div class="w-4/5 ml-72 p-4 mt-5">
+    <div class="w-fit ml-80 p-4 mt-5">
         <div class="flex mb-2">
             <h2 class="text-3xl font-bold mb-6">Categories</h2>
             <button onclick="openAddCategoryPopup()"
@@ -85,7 +85,7 @@ $conn->close();
     <div id="addCategoryPopup" class="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50 hidden">
         <div class="bg-white rounded-lg p-8">
             <h2 class="text-xl font-bold mb-4">Add New Category</h2>
-            <form action="category.php" method="POST">
+            <form action="add_category.php" method="POST">
                 <label for="categoryName" class="block mb-2">Category Name:</label>
                 <input type="text" name="categoryName" id="categoryName" class="border rounded-md px-3 py-2 mb-4">
                 <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Add

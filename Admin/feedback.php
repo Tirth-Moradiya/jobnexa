@@ -11,7 +11,7 @@
 
 <body class="bg-gray-100 font-serif">
   <?php include "sidebar.php"; ?>
-  <div class="w-4/5 ml-72 p-4 mt-5">
+  <div class="w-fit ml-80 p-4 mt-5">
     <h2 class="text-3xl font-bold mb-6">Feedbacks</h2>
     <div id="feedback-list" class="space-y-4">
       <?php

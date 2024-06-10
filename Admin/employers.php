@@ -11,7 +11,7 @@
 
 <body>
   <?php include "sidebar.php"; ?>
-  <div class="w-4/5 ml-72 p-4 mt-5">
+  <div class="w-fit ml-80 p-4 mt-5">
     <h2 class="text-3xl font-bold mb-6">All Employers</h2>
     <div class="mt-10 mx-8">
       <table class="table-auto w-full bg-white border border-gray-200">

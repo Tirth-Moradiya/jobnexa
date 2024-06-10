@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['categoryName'])) {
     $query = "INSERT INTO category (cat_name) VALUES ('$categoryName')";
     if ($conn->query($query) === TRUE) {
         // Category added successfully, you can redirect or display a success message here
-        header("Location:sidebar.php");
+        header("Location:category.php");
         exit();
     } else {
         // Error occurred

@@ -41,36 +41,36 @@ $conn->close();
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin Dashboard</title>
-  <link rel="stylesheet" href="../css/admin_dashboard.css">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
 </head>
 
 <body>
 
   <?php include "sidebar.php"; ?>
-  <div class="content ml-72 p-4 mt-5">
+  <div class="content ml-80 p-4 mt-5 text-blue-900">
     <h2 class="text-3xl font-bold mb-6">Dashboard Overview</h2>
 
-    <div class="dashboard-boxes">
-      <div class="dashboard-box">
-        <h3>Total Users</h3>
-        <p class="count"><?php echo $total_users; ?></p>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="dashboard-box bg-white p-6 shadow-md rounded-md">
+        <h3 class="text-xl font-bold mb-2">Total Users</h3>
+        <p class="text-2xl font-bold text-blue-500"><?php echo $total_users; ?></p>
       </div>
-      <div class="dashboard-box">
-        <h3>Total Employers</h3>
-        <p class="count"><?php echo $total_employers; ?></p>
+      <div class="dashboard-box bg-white p-6 shadow-md rounded-md">
+        <h3 class="text-xl font-bold mb-2">Total Employers</h3>
+        <p class="text-2xl font-bold text-blue-500"><?php echo $total_employers; ?></p>
       </div>
-      <div class="dashboard-box">
-        <h3>Total Jobs</h3>
-        <p class="count"><?php echo $total_jobs; ?></p>
+      <div class="dashboard-box bg-white p-6 shadow-md rounded-md">
+        <h3 class="text-xl font-bold mb-2">Total Jobs</h3>
+        <p class="text-2xl font-bold text-blue-500"><?php echo $total_jobs; ?></p>
       </div>
-      <div class="dashboard-box">
-        <h3>Total Applications</h3>
-        <p class="count"><?php echo $total_applications; ?></p>
+      <div class="dashboard-box bg-white p-6 shadow-md rounded-md">
+        <h3 class="text-xl font-bold mb-2">Total Applications</h3>
+        <p class="text-2xl font-bold text-blue-500"><?php echo $total_applications; ?></p>
       </div>
     </div>
-    <div class="chart-container">
+
+    <div class="chart-container mt-8">
       <canvas id="dashboardChart"></canvas>
     </div>
   </div>

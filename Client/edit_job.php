@@ -1,66 +1,103 @@
+<!DOCTYPE html>
 <html>
 
-</html>
-
 <head>
-    <link rel="stylesheet" href="../css/edit_job.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 
-<body>
-    <h1>Update Job Details</h1>
-    <?php
-    // Include database connection file
-    include "../Connection/db_conn.php";
+<body class="font-sans bg-gray-100">
+    <?php include "./header.php"; ?>
 
-    if (isset($_GET['jid'])) {
-        $jid = $_GET['jid'];
-        // Fetch the job posting from the database using the job ID
-        $query = "SELECT * FROM job WHERE jid = '$jid'";
-        $result = $conn->query($query);
-        $job = $result->fetch_assoc();
-
-        // Display the edit form
-        ?>
-        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-            <label>Job Title:</label>
-            <input type="text" name="jtitle" value="<?php echo $job['jtitle']; ?>"><br><br>
-            <label>Company Name:</label>
-            <input type="text" name="company_name" value="<?php echo $job['company_name']; ?>"><br><br>
-            <label>Location:</label>
-            <input type="text" name="jlocation" value="<?php echo $job['jlocation']; ?>"><br><br>
-            <label>Description:</label>
-            <textarea name="jdescription"><?php echo $job['jdescription']; ?></textarea><br><br>
-            <label>Salary:</label>
-            <input type="text" name="jsalary" value="<?php echo $job['jsalary']; ?>"><br><br>
-            <input type="hidden" name="jid" value="<?php echo $jid; ?>">
-            <input type="submit" value="Update Job">
-        </form>
+    <div class="mx-auto px-4 py-10 font-serif text-blue-900">
+        <h1 class="text-3xl text-center pt-24 font-bold mb-4">Update Job Details</h1>
         <?php
-    } elseif (isset($_POST['jid'])) {
-        $jid = $_POST['jid'];
-        $jtitle = $_POST['jtitle'];
-        $company_name = $_POST['company_name'];
-        $jlocation = $_POST['jlocation'];
-        $jdescription = $_POST['jdescription'];
-        $jsalary = $_POST['jsalary'];
+        // Include database connection file
+        include "../Connection/db_conn.php";
 
-        // Update the job posting in the database
-        $query = "UPDATE job SET jtitle = '$jtitle', company_name = '$company_name', jlocation = '$jlocation', jdescription = '$jdescription', jsalary = '$jsalary' WHERE jid = '$jid'";
-        $result = $conn->query($query);
-        if ($result) {
-            echo 'Job updated successfully!';
-            header('Location:../index.php');
-            exit;
+        if (isset($_GET['jid'])) {
+            $jid = $_GET['jid'];
+            // Fetch the job posting from the database using the job ID
+            $query = "SELECT * FROM job WHERE jid = '$jid'";
+            $result = $conn->query($query);
+            $job = $result->fetch_assoc();
+
+            // Display the edit form
+            ?>
+            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post"
+                class="space-y-4 border p-10 rounded-lg  bg-white w-3/5 mx-auto">
+                <div>
+                    <label class="text-black block mb-1 font-bold">Job Title:</label>
+                    <input type="text" name="jtitle" value="<?php echo $job['jtitle']; ?>"
+                        class="w-full px-3 py-2 border border-gray-300 rounded-lg">
+                </div>
+                <div>
+                    <label class="text-black block mb-1 font-bold">Company Name:</label>
+                    <input type="text" name="company_name" value="<?php echo $job['company_name']; ?>"
+                        class="w-full px-3 py-2 border border-gray-300 rounded-lg">
+                </div>
+                <div>
+                    <label class="text-black block mb-1 font-bold">Location:</label>
+                    <input type="text" name="jlocation" value="<?php echo $job['jlocation']; ?>"
+                        class="w-full px-3 py-2 border border-gray-300 rounded-lg">
+                </div>
+                <div>
+                    <label class="text-black block mb-1 font-bold">Description:</label>
+                    <textarea name="jdescription"
+                        class="w-full px-3 py-2 border border-gray-300 rounded-lg"><?php echo $job['jdescription']; ?></textarea>
+                </div>
+                <div>
+                    <label class="text-black block mb-1 font-bold">Salary:</label>
+                    <input type="text" name="jsalary" value="<?php echo $job['jsalary']; ?>"
+                        class="w-full px-3 py-2 border border-gray-300 rounded-lg">
+                </div>
+                <div>
+                    <label class="text-black block mb-1 font-bold">Job Type:</label>
+                    <select name="jtype"
+                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500">
+                        <option value="Full-time" <?php if ($job['jtype'] == 'Full-time')
+                            echo 'selected'; ?>>Full-time
+                        </option>
+                        <option value="Part-time" <?php if ($job['jtype'] == 'Part-time')
+                            echo 'selected'; ?>>Part-time
+                        </option>
+                        <option value="Contract" <?php if ($job['jtype'] == 'Contract')
+                            echo 'selected'; ?>>Contract
+                        </option>
+                        <!-- Add more job type options as needed -->
+                    </select>
+                </div>
+                <input type="hidden" name="jid" value="<?php echo $jid; ?>">
+                <input type="submit" value="Update Job"
+                    class="w-full bg-blue-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:bg-blue-600">
+            </form>
+            <?php
+        } elseif (isset($_POST['jid'])) {
+            $jid = $_POST['jid'];
+            $jtitle = $_POST['jtitle'];
+            $company_name = $_POST['company_name'];
+            $jlocation = $_POST['jlocation'];
+            $jdescription = $_POST['jdescription'];
+            $jsalary = $_POST['jsalary'];
+            $jtype = $_POST['jtype'];
+
+            // Update the job posting in the database
+            $query = "UPDATE job SET jtitle = '$jtitle', company_name = '$company_name', jlocation = '$jlocation', jdescription = '$jdescription', jsalary = '$jsalary', jtype = '$jtype' WHERE jid = '$jid'";
+            $result = $conn->query($query);
+            if ($result) {
+                echo 'Job updated successfully!';
+                header('Location:../index.php');
+                exit;
+            } else {
+                echo 'Error updating job!';
+            }
         } else {
-            echo 'Error updating job!';
+            echo 'Invalid request!';
         }
-    } else {
-        echo 'Invalid request!';
-    }
 
-    // Close database connection
-    $conn->close();
-    ?>
+        // Close database connection
+        $conn->close();
+        ?>
+    </div>
 </body>
 
 </html>

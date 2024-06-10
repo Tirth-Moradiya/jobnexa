@@ -10,7 +10,7 @@
   <style>
     /* Additional CSS for Active Link */
     .active {
-      background-color: black;
+      background-color: darkblue;
       color: white;
     }
   </style>
@@ -51,33 +51,45 @@
     <div class="container mx-auto flex justify-between items-center">
       <h1 class="text-lg font-bold text-gray-900">Job Nexa</h1>
       <div class="flex items-center">
-        <img src="admin-icon.png" alt="Admin Icon" class="w-10 h-10 rounded-full mr-2">
+        <img src="https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_640.png" alt="Admin Icon"
+          class="w-10 h-10 rounded-full mr-2">
         <div class="text-sm">
-          <div class="font-semibold">John Doe</div>
+          <div class="font-semibold">
+            <?php
+            // Start the session
+            // Check if admin name is set in session
+            if (isset($_SESSION['admin_name'])) {
+              echo $_SESSION['admin_name'];
+            }
+            ?>
+          </div>
           <div class="text-gray-600">Admin</div>
         </div>
-        <a href="index.php"
-          class="ml-4 inline-block py-1 px-3 bg-red-500 text-white rounded hover:bg-red-600">Logout</a>
+
       </div>
     </div>
   </header>
+
 
   <div class="flex">
     <div class="w-1/5 fixed h-full bg-white shadow-md p-4 pt-20 sidebar">
       <ul class="space-y-2">
         <li><a href="admin_dashboard.php" id="dashboard-link" onclick="setActiveLink(this)"
-            class="block py-2 text-center px-4 rounded hover:bg-red-500 hover:text-white">Dashboard</a></li>
+            class="block py-2 text-center px-4 rounded   hover:bg-blue-900 hover:text-white">Dashboard</a></li>
         <li><a href="jobs.php" id="jobs-link" onclick="setActiveLink(this)"
-            class="block py-2 text-center px-4 rounded hover:bg-red-500 hover:text-white">Jobs</a></li>
+            class="block py-2 text-center px-4 rounded   hover:bg-blue-900 hover:text-white">Jobs</a></li>
         <li><a href="users.php" id="users-link" onclick="setActiveLink(this)"
-            class="block py-2 text-center px-4 rounded hover:bg-red-500 hover:text-white">Users</a></li>
+            class="block py-2 text-center px-4 rounded   hover:bg-blue-900 hover:text-white">Users</a></li>
         <li><a href="employers.php" id="employers-link" onclick="setActiveLink(this)"
-            class="block py-2 text-center px-4 rounded hover:bg-red-500 hover:text-white">Employers</a></li>
+            class="block py-2 text-center px-4 rounded   hover:bg-blue-900 hover:text-white">Employers</a></li>
         <li><a href="category.php" id="category-link" onclick="setActiveLink(this)"
-            class="block py-2 text-center px-4 rounded hover:bg-red-500 hover:text-white">Category</a></li>
+            class="block py-2 text-center px-4 rounded   hover:bg-blue-900 hover:text-white">Category</a></li>
         <li><a href="feedback.php" id="feedback-link" onclick="setActiveLink(this)"
-            class="block py-2 text-center px-4 rounded hover:bg-red-500 hover:text-white">Feedbacks</a></li>
+            class="block py-2 text-center px-4 rounded   hover:bg-blue-900 hover:text-white">Feedbacks</a></li>
       </ul>
+
+      <a href="../Client/logout.php"
+        class="mt-64 text-center inline-block w-full py-1 px-3 bg-red-500 text-white rounded hover:bg-red-600">Logout</a>
     </div>
 
     <div class="ml-1/5 w-4/5 p-8 pt-0">

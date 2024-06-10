@@ -76,6 +76,7 @@ $conn->close();
                         class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-24"
                         required></textarea>
                 </div>
+
                 <div class="mb-4">
                     <label for="resume" class="block text-black text-sm font-bold mb-2">Resume:</label>
                     <input type="file" id="resume" name="resume"

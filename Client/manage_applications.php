@@ -67,14 +67,14 @@ $conn->close();
 </head>
 
 
-<body class="bg-gray-100">
+<body class="bg-white">
     <?php include "./header.php"; ?>
 
     <div class="container mx-auto py-28 text-blue-900 font-serif">
         <h2 class="text-3xl font-semibold text-center mb-6">Manage Job Applications</h2>
         <?php if ($result->num_rows > 0): ?>
             <div class="overflow-x-auto">
-                <table class="table-auto w-full border-collapse border border-gray-300">
+                <table class="table-auto mx-auto mt-5 w-5/6 border-collapse border border-gray-300">
                     <thead class="bg-gray-200 text-black ">
                         <tr>
                             <th class="px-4 py-2">Job Title</th>
