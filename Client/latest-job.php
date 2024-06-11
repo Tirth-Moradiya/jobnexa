@@ -30,11 +30,11 @@
                     echo '<p class="text-lg tracking-wider"><span class="font-semibold text-black">$</span> ' . $row["jsalary"] . '</p><hr/>';
                     echo '<div class="flex justify-center gap-2 mt-4">';
                     if (isset($_SESSION['user_type']) && $_SESSION['user_type'] == 'employer') {
-                        echo '<a href=".../../Client/edit_job.php?jid=' . $row["jid"] . '" class="inline-block bg-blue-500 text-white no-underline px-4 py-2 rounded-md hover:bg-blue-600">Update</a>';
-                        echo '<a href=".../../Client/delete_job.php?jid=' . $row["jid"] . '" class="inline-block bg-red-500 text-white no-underline px-4 py-2 rounded-md hover:bg-red-600">Delete</a>';
+                        echo '<a href=".../../Client/employer/edit_job.php?jid=' . $row["jid"] . '" class="inline-block bg-blue-500 text-white no-underline px-4 py-2 rounded-md hover:bg-blue-600">Update</a>';
+                        echo '<a href=".../../Client/employer/delete_job.php?jid=' . $row["jid"] . '" class="inline-block bg-red-500 text-white no-underline px-4 py-2 rounded-md hover:bg-red-600">Delete</a>';
                     }
                     if (isset($_SESSION['user_type']) && $_SESSION['user_type'] != 'employer') {
-                        echo '<a href=".../../Client/job_application_form.php?jid=' . $row["jid"] . '" class="inline-block bg-green-500 text-white px-4 py-2 no-underline rounded-md hover:bg-green-600">Apply</a>';
+                        echo '<a href=".../../Client/user/job_application_form.php?jid=' . $row["jid"] . '" class="inline-block bg-green-500 text-white px-4 py-2 no-underline rounded-md hover:bg-green-600">Apply</a>';
                     }
                     echo '</div>'; // Closing flex div
                     echo '</div>'; // Closing job-posting card

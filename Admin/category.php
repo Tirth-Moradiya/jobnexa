@@ -33,7 +33,7 @@ $conn->close();
     </script>
 </head>
 
-<body class="bg-gray-100 font-serif">
+<body class="bg-gray-100 font-serif text-blue-900">
     <?php include "sidebar.php"; ?>
     <div class="w-fit ml-80 p-4 mt-5">
         <div class="flex mb-2">
@@ -63,9 +63,9 @@ $conn->close();
                     if ($result->num_rows > 0) {
                         while ($row = $result->fetch_assoc()) {
                             echo "<tr>";
-                            echo "<td class='px-4 py-2 border-b border-gray-200'>" . $row["cat_id"] . "</td>";
-                            echo "<td class='px-4 py-2 border-b border-gray-200'>" . $row["cat_name"] . "</td>";
-                            echo "<td class='px-4 py-2 border-b border-gray-200'>";
+                            echo "<td class='px-4 text-black py-2 border-b border-gray-200'>" . $row["cat_id"] . "</td>";
+                            echo "<td class='px-4 text-black py-2 border-b border-gray-200'>" . $row["cat_name"] . "</td>";
+                            echo "<td class='px-4 text-black py-2 border-b border-gray-200'>";
                             echo "<form method='POST' action='delete_category.php'>";
                             echo "<input type='hidden' name='cat_id' value='" . $row['cat_id'] . "'>";
                             echo "<button type='submit' class='bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded'>Delete</button>";

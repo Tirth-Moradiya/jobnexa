@@ -1,6 +1,6 @@
 <?php
 // Include database connection file
-include "../Connection/db_conn.php";
+include "../../Connection/db_conn.php";
 
 // Check if the form is submitted
 if (isset($_POST['submit_application'])) {
@@ -25,7 +25,7 @@ if (isset($_POST['submit_application'])) {
 
     if ($result) {
         echo "Job application submitted successfully.";
-        header("Location:../index.php");
+        header("Location:../../index.php");
     } else {
         echo "Error: " . $conn->error;
     }
@@ -51,7 +51,7 @@ $conn->close();
 </head>
 
 <body class="bg-gray-100 font-serif text-blue-900">
-    <?php include "./header.php"; ?>
+    <?php include "../header.php"; ?>
     <div class="flex pt-20 justify-center items-center h-screen">
         <div class="w-full max-w-md">
             <h2 class="text-3xl font-semibold text-center mb-6">Apply for Job</h2>

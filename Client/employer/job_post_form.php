@@ -1,5 +1,5 @@
 <?php
-include "../Connection/db_conn.php";
+include "../../Connection/db_conn.php";
 
 // Fetch categories from the database
 $query = "SELECT * FROM category";
@@ -16,13 +16,13 @@ $result = $conn->query($query);
 </head>
 
 <body class="font-roboto   font-serif bg-gray-100">
-    <?php include "./header.php"; ?>
+    <?php include "../header.php"; ?>
     <div class=" mx-auto px-4 py-20">
-        <a href="../index.php"
+        <a href="../../index.php"
             class="text-blue-500 hover:text-blue-700 inline-block mb-4 px-2 py-2 border border-blue-500 rounded transition duration-300 ease-in-out transform hover:scale-105">Back</a>
         <h1 class="text-2xl font-bold mb-6 text-center">Post a Job</h1>
         <div class="w-full md:w-3/4 mx-auto bg-white rounded-lg shadow-lg p-6">
-            <form action="job_submit.php" method="post" class="space-y-6">
+            <form action="job_post.php" method="post" class="space-y-6">
                 <div>
                     <label for="jtitle" class="block mb-2 text-gray-700">Job Title</label>
                     <input type="text" id="jtitle" name="jtitle"

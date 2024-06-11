@@ -10,12 +10,12 @@
 </head>
 
 <body class="bg-blue-50 h-screen flex items-center justify-center font-serif">
-    <div class="container flex justify-center items-center h-full">
+    <div class="container gap-52 flex justify-center items-center h-full">
         <div class="left-side flex-1 p-8 text-center">
             <h1 class="text-4xl font-bold text-blue-900 mb-4">Welcome to JobNexa</h1>
             <p class="text-xl text-gray-700">Admin Pannel</p>
         </div>
-        <div class="right-side w-full lg:w-1/2 max-w-md p-8 bg-white rounded-lg shadow-lg mx-auto lg:mr-52">
+        <div class="right-side w-full lg:w-1/2 max-w-md p-8 bg-white rounded-lg shadow-lg mx-auto lg:mr-10">
             <h2 class="text-2xl font-bold text-white bg-blue-900 p-4 rounded-t-lg text-center mb-4">Login</h2>
             <form action="login.php" method="POST" class="space-y-4">
                 <div class="form-group">

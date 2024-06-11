@@ -5,10 +5,10 @@ if (isset($_POST['eid'])) {
     include "../Connection/db_conn.php";
 
     // Get the user ID from the form submission
-    $uid = $_POST['eid'];
+    $eid = $_POST['eid'];
 
     // Prepare and execute the SQL statement to delete the user
-    $stmt = $conn->prepare("DELETE FROM user WHERE eid = ?");
+    $stmt = $conn->prepare("DELETE FROM employer WHERE eid = ?");
     $stmt->bind_param("i", $eid);
 
     if ($stmt->execute()) {

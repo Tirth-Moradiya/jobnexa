@@ -2,7 +2,7 @@
 // delete_job.php
 
 // Include database connection file
-include "../Connection/db_conn.php";
+include "../../Connection/db_conn.php";
 
 if (isset($_GET['jid'])) {
     $jid = $_GET['jid'];
@@ -11,7 +11,7 @@ if (isset($_GET['jid'])) {
     $result = $conn->query($query);
     if ($result) {
         echo 'Job deleted successfully!';
-        header('Location:../index.php');
+        header('Location:../../index.php');
     } else {
         echo 'Error deleting job!';
     }

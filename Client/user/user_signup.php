@@ -1,5 +1,5 @@
 <?php
-include "../Connection/db_conn.php"; // Include your database connection file
+include "../../Connection/db_conn.php"; // Include your database connection file
 
 // Check if form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Execute the query
     if ($stmt->execute()) {
         echo "User signed up successfully!";
-        header("Location:login1.php");
+        header("Location:../login1.php");
 
     } else {
         echo "Error: " . $stmt->error;

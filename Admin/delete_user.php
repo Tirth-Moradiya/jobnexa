@@ -1,11 +1,11 @@
 <?php
 // Check if the user ID is submitted
-if (isset($_POST['user_id'])) {
+if (isset($_POST['uid'])) {
     // Include database connection
     include "../Connection/db_conn.php";
 
     // Get the user ID from the form submission
-    $uid = $_POST['user_id'];
+    $uid = $_POST['uid'];
 
     // Prepare and execute the SQL statement to delete the user
     $stmt = $conn->prepare("DELETE FROM user WHERE uid = ?");

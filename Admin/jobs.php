@@ -39,8 +39,8 @@ $result = $conn->query($query);
 
     <?php include "sidebar.php"; ?>
 
-    <div class="w-fit ml-80 p-4 mt-5">
-        <h2 class="text-3xl font-bold mb-6">Job Postings</h2>
+    <div class="w-fit ml-80 p-4 mt-5 text-blue-900">
+        <h2 class="text-3xl font-bold mb-6">All Jobs</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             <?php
             if ($result->num_rows > 0) {

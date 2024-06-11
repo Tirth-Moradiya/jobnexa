@@ -9,10 +9,10 @@
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 
-<body class="bg-gray-100 font-serif">
+<body class="bg-gray-100 font-serif text-black">
   <?php include "sidebar.php"; ?>
   <div class="w-fit ml-80 p-4 mt-5">
-    <h2 class="text-3xl font-bold mb-6">Feedbacks</h2>
+    <h2 class="text-3xl font-bold mb-6 text-blue-900">Feedbacks</h2>
     <div id="feedback-list" class="space-y-4">
       <?php
       // Include database connection file
@@ -27,9 +27,9 @@
         // Output data of each row
         while ($feedback = $result->fetch_assoc()) {
           echo "<div class='bg-white shadow-md p-4 rounded-md'>";
-          echo "<div><strong class='font-semibold'>User:</strong> " . htmlspecialchars($feedback["name"]) . "</div>";
-          echo "<div><strong class='font-semibold'>Email:</strong> " . htmlspecialchars($feedback["email"]) . "</div>";
-          echo "<div><strong class='font-semibold'>Message:</strong> " . htmlspecialchars($feedback["message"]) . "</div>";
+          echo "<div><strong class='font-semibold text-blue-900'>User:</strong> " . htmlspecialchars($feedback["name"]) . "</div>";
+          echo "<div><strong class='font-semibold text-blue-900'>Email:</strong> " . htmlspecialchars($feedback["email"]) . "</div>";
+          echo "<div><strong class='font-semibold text-blue-900'>Message:</strong> " . htmlspecialchars($feedback["message"]) . "</div>";
           echo "</div>";
         }
       } else {

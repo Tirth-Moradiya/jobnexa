@@ -1,6 +1,6 @@
 <?php
 // Include database connection file
-include "../Connection/db_conn.php";
+include "../../Connection/db_conn.php";
 
 // Start the session
 session_start();
@@ -41,7 +41,7 @@ $conn->close();
 
 <body class="bg-gray-100">
     <div>
-        <?php include "header.php"; ?>
+        <?php include "../header.php"; ?>
     </div>
 
     <div class="container mx-auto px-4 py-28 font-serif text-blue-900">
@@ -57,6 +57,8 @@ $conn->close();
                             <th class="py-3 px-4 uppercase font-semibold text-left">Cover Letter</th>
                             <th class="py-3 px-4 uppercase font-semibold text-left">Resume</th>
                             <th class="py-3 px-4 uppercase font-semibold text-left">Status</th>
+                            <th class="py-3 px-4 uppercase font-semibold text-left">Action</th>
+
                         </tr>
                     </thead>
                     <tbody class="text-gray-600">
@@ -74,6 +76,13 @@ $conn->close();
                                     ?>
                                 </td>
                                 <td class="py-3 px-4"><?php echo htmlspecialchars($row['application_status']); ?></td>
+                                <td class="py-3 px-4">
+                                    <form action="delete_application.php" method="post"
+                                        onsubmit="return confirm('Are you sure you want to delete this application?');">
+                                        <input type="hidden" name="jid" value="<?php echo $row['jid']; ?>">
+                                        <button type="submit" class="bg-red-600 p-2 rounded-lg text-white">Delete</button>
+                                    </form>
+                                </td>
                             </tr>
                         <?php endwhile; ?>
                     </tbody>

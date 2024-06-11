@@ -6,13 +6,13 @@
 </head>
 
 <body class="font-sans bg-gray-100">
-    <?php include "./header.php"; ?>
+    <?php include "../header.php"; ?>
 
     <div class="mx-auto px-4 py-10 font-serif text-blue-900">
         <h1 class="text-3xl text-center pt-24 font-bold mb-4">Update Job Details</h1>
         <?php
         // Include database connection file
-        include "../Connection/db_conn.php";
+        include "../../Connection/db_conn.php";
 
         if (isset($_GET['jid'])) {
             $jid = $_GET['jid'];
@@ -85,7 +85,7 @@
             $result = $conn->query($query);
             if ($result) {
                 echo 'Job updated successfully!';
-                header('Location:../index.php');
+                header('Location:../../index.php');
                 exit;
             } else {
                 echo 'Error updating job!';

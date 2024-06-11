@@ -24,6 +24,7 @@ if (!empty($logged_in_user)) {
 <head>
     <title>Job Portal</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
 </head>
 
 <body class="">
@@ -44,17 +45,18 @@ if (!empty($logged_in_user)) {
                     <div class="flex gap-3 pr-20 text-lg ">
                         <?php if (!empty($logged_in_user)): ?>
                             <?php if ($user_type === "user"): ?>
-                                <li><a href="./Client/application.php"
+                                <li><a href="./Client/user/application.php"
                                         class="text-white no-underline hover:text-white">Applications</a></li>
                                 <li><a href="./Client/all_jobs.php" class="text-white no-underline hover:text-white">Jobs</a>
                                 </li>
                                 <li><a href="./Client/profile.php" class="text-white no-underline hover:text-white">Profile</a>
                                 </li>
                             <?php elseif ($user_type === "employer"): ?>
-                                <li><a href="./Client/post_job.php" class="text-white no-underline hover:text-white">Post
+                                <li><a href="./Client/employer/job_post_form.php"
+                                        class="text-white no-underline hover:text-white">Post
                                         Job</a>
                                 </li>
-                                <li><a href="./Client/manage_applications.php"
+                                <li><a href="./Client/employer/manage_applications.php"
                                         class="text-white no-underline hover:text-white">View
                                         Applications</a></li>
                                 <li><a href="./Client/profile.php" class="text-white no-underline hover:text-white">Profile</a>
@@ -74,7 +76,7 @@ if (!empty($logged_in_user)) {
                         <?php endif; ?>
 
                         <?php if (empty($logged_in_user)): ?>
-                            <li><a href="./Client/ex.php"
+                            <li><a href="./Client/signup.php"
                                     class="text-white no-underline bg-blue-500 rounded p-2 hover:text-white">Sign Up</a>
                             </li>
                         <?php endif; ?>

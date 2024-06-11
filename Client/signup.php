@@ -23,7 +23,7 @@
 
         <div id="user-signup" class="signup-form">
             <h3 class="text-xl font-semibold mb-4">User Sign Up</h3>
-            <form action="user_signup_process.php" method="POST" class="space-y-4">
+            <form action="./user/user_signup.php" method="POST" class="space-y-4">
                 <div class="form-group">
                     <label for="user_id" class="block text-gray-700">User ID:</label>
                     <input type="text" id="user_id" name="user_id" required
@@ -77,7 +77,8 @@
 
         <div id="employer-signup" class="signup-form hidden">
             <h3 class="text-xl font-semibold mb-4">Employer Sign Up</h3>
-            <form action="employer_signup_process.php" method="POST" class="space-y-4">
+            <form action="./employer/employer_signup
+            .php" method="POST" class="space-y-4">
                 <div class="form-group">
                     <label for="employer_id" class="block text-gray-700">Employer ID:</label>
                     <input type="text" id="employer_id" name="employer_id" required

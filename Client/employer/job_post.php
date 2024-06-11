@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "../Connection/db_conn.php";
+include "../../Connection/db_conn.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $jtitle = $_POST['jtitle'];
@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($stmt->execute()) {
         echo "New job posted successfully!";
-        header("Location:../index.php");
+        header("Location:../../index.php");
     } else {
         echo "Error: " . $stmt->error;
     }

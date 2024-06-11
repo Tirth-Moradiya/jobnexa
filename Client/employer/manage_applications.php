@@ -1,6 +1,6 @@
 <?php
 // Include database connection file
-include "../Connection/db_conn.php";
+include "../../Connection/db_conn.php";
 
 // Start the session
 session_start();
@@ -8,7 +8,7 @@ session_start();
 // Check if the user is logged in and is an employer
 if (!isset($_SESSION['user_type']) || $_SESSION['user_type'] !== 'employer') {
     // Redirect to login page if not logged in as an employer
-    header("Location: login.php");
+    header("Location: ../../login.php");
     exit();
 }
 
@@ -68,7 +68,7 @@ $conn->close();
 
 
 <body class="bg-white">
-    <?php include "./header.php"; ?>
+    <?php include "../header.php"; ?>
 
     <div class="container mx-auto py-28 text-blue-900 font-serif">
         <h2 class="text-3xl font-semibold text-center mb-6">Manage Job Applications</h2>
@@ -101,7 +101,7 @@ $conn->close();
                                     ?>
                                 </td>
                                 <td class="border px-4 py-2">
-                                    <form method="post" action="">
+                                    <form method="post" action="" class="flex gap-1">
                                         <input type="hidden" name="application_id" value="<?php echo $row['jid']; ?>">
                                         <select name="new_status"
                                             class="border border-gray-300 rounded py-1 px-2 focus:outline-none focus:border-blue-500">
