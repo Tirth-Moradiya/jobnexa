@@ -60,9 +60,9 @@ while ($row = $categories_result->fetch_assoc()) {
     </style>
 </head>
 
-<body class="bg-gray-100">
+<body class="bg-blue-50">
     <?php include "header.php"; ?>
-    <div class="container mx-auto pt-32 font-serif text-blue-900">
+    <div class="container mx-auto pt-10 font-serif text-blue-900">
         <h2 class="text-3xl font-semibold text-center mb-8">All Jobs </h2>
 
         <!-- Category Slider -->

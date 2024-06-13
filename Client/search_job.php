@@ -30,31 +30,26 @@
 
 <body class="bg-white font-serif">
     <section class="py-16 bg-gray-50 text-blue-900 bg-gradient-to-r from-blue-50 to-indigo-100">
-        <div class="max-w-full mx-auto text-center font-serif pb-10">
-            <form class="bg-white mb-5 rounded-lg shadow-md p-6 mx-auto w-4/6 space-y-4" id="job-search-form"
+        <div class="max-w-full mx-auto px-4 md:px-0 text-center font-serif pb-10">
+            <form class="bg-white mb-5 rounded-lg shadow-md p-6 mx-auto md:w-4/6 space-y-4" id="job-search-form"
                 method="POST" action="">
-                <div class="flex">
-                    <div class="ml-3 w-96">
-                        <input type="text" name="keywords" placeholder="Enter keywords, job title, or company name"
-                            class="w-full px-4 py-2 border focus:outline-none focus:ring-2 focus:ring-blue-500"
-                            required>
-                    </div>
-                    <div class="w-96">
-                        <input type="text" name="location" placeholder="Location"
-                            class="w-full px-4 py-2 border focus:outline-none focus:ring-2 focus:ring-blue-500"
-                            required>
-                    </div>
-                    <div class="text-center mr-5 ml-auto w-32">
-                        <button type="submit"
-                            class="w-full bg-blue-700 text-white py-2 px-4 rounded-lg hover:bg-blue-600">
-                            Search
-                        </button>
-                    </div>
+                <div class="flex flex-col md:flex-row justify-center items-center">
+                    <input type="text" name="keywords" placeholder="Enter keywords, job title, or company name"
+                        class="w-full md:w-96 px-4 py-2 border mb-3 md:mr-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        required>
+                    <input type="text" name="location" placeholder="Location"
+                        class="w-full md:w-96 px-4 py-2 border mb-3 md:ml-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        required>
+                    <button type="submit"
+                        class="w-full md:w-auto bg-blue-700 mb-3 ml-2 text-white py-2 px-4 rounded-lg hover:bg-blue-600">
+                        Search
+                    </button>
                 </div>
             </form>
         </div>
 
-        <section class="max-w-full mx-auto text-center font-serif" id="job-results-section" style="display: none;">
+        <section class="max-w-full mx-auto px-4 md:px-0 text-center font-serif" id="job-results-section"
+            style="display: none;">
             <?php
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 // Database connection parameters
@@ -82,7 +77,7 @@
                 $conn->close();
 
                 if (count($jobs) > 0) {
-                    echo "<div class='bg-white rounded-lg shadow-md p-6 mx-auto w-4/6'>";
+                    echo "<div class='bg-white rounded-lg shadow-md p-6 mx-auto md:w-4/6'>";
                     echo "<h3 class='text-2xl font-semibold mb-4'>Job Results</h3><ul class='space-y-4'>";
                     foreach ($jobs as $job) {
                         echo "<li class='job-result-card'>";
@@ -105,7 +100,7 @@
                     }
                     echo "</ul></div>";
                 } else {
-                    echo "<div class='bg-white rounded-lg shadow-md p-6 mx-auto w-4/6'>";
+                    echo "<div class='bg-white rounded-lg shadow-md p-6 mx-auto md:w-4/6'>";
                     echo "<h3 class='text-2xl font-semibold mb-4'>No Results</h3><p>No jobs found matching your criteria.</p></div>";
                 }
             }

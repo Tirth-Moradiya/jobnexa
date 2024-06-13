@@ -15,7 +15,8 @@
         <h2 class="text-2xl font-semibold text-center mb-4">Sign Up</h2>
         <div class="mb-6">
             <label for="user-type" class="block text-gray-700">Sign Up As:</label>
-            <select id="user-type" onchange="showSignupForm()" class="w-full mt-2 p-3 border rounded-lg">
+            <select id="user-type" onchange="showSignupForm()"
+                class="w-full mt-2 p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
                 <option value="user">User</option>
                 <option value="employer">Employer</option>
             </select>
@@ -24,11 +25,10 @@
         <div id="user-signup" class="signup-form">
             <h3 class="text-xl font-semibold mb-4">User Sign Up</h3>
             <form action="./user/user_signup.php" method="POST" class="space-y-4">
-                <div class="form-group">
-                    <label for="user_id" class="block text-gray-700">User ID:</label>
-                    <input type="text" id="user_id" name="user_id" required
-                        class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-                </div>
+                <!-- <label for="user_id" class="block text-gray-700">User ID:</label>
+                <input type="text" id="user_id" name="user_id" required
+                    class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div> -->
                 <div class="form-group">
                     <label for="user_name" class="block text-gray-700">Username:</label>
                     <input type="text" id="user_name" name="user_name" required
@@ -77,13 +77,12 @@
 
         <div id="employer-signup" class="signup-form hidden">
             <h3 class="text-xl font-semibold mb-4">Employer Sign Up</h3>
-            <form action="./employer/employer_signup
-            .php" method="POST" class="space-y-4">
-                <div class="form-group">
+            <form action="./employer/employer_signup.php" method="POST" class="space-y-4">
+                <!-- <div class="form-group">
                     <label for="employer_id" class="block text-gray-700">Employer ID:</label>
                     <input type="text" id="employer_id" name="employer_id" required
                         class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-                </div>
+                </div> -->
                 <div class="form-group">
                     <label for="employer_name" class="block text-gray-700">Employer Name:</label>
                     <input type="text" id="employer_name" name="employer_name" required

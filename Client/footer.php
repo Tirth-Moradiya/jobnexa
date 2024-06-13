@@ -12,28 +12,31 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+
+    </style>
 </head>
 
 <body>
 
-    <footer class="bg-blue-900 text-white py-12 font-serif">
-        <div class="mx-auto px-32">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="footer-section">
+    <footer class="bg-blue-900 text-white py-5 font-serif">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 footer-section">
                     <h3 class="text-xl font-semibold mb-4">About Us</h3>
                     <p class="text-gray-400">Connecting talent with opportunity.</p>
                     <div class="mt-4">
                         <span class="mr-2"><i class="fas fa-envelope"></i> contact@jobnexa.com</span><br>
-                        <span class="mt-10"><i class="fas fa-phone"></i> +91 9988745632</span>
+                        <span class="mt-2"><i class="fas fa-phone"></i> +91 9988745632</span>
                     </div>
                     <div class="socials mt-4">
-                        <a href="#" class="text-white mr-2"><i class="fab fa-facebook"></i></a>
-                        <a href="#" class="text-white mr-2"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="text-white mr-2"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
                         <a href="#" class="text-white"><i class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
-                <div class="footer-section">
+                <div class="col-md-4 footer-section">
                     <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
                     <ul>
                         <li><a href="#" class="text-gray-400 no-underline hover:text-white">Home</a></li>
@@ -42,24 +45,21 @@
                         <li><a href="#" class="text-gray-400 no-underline hover:text-white">Contact</a></li>
                     </ul>
                 </div>
-                <div class="footer-section">
+                <div class="col-md-4 footer-section">
                     <h3 class="text-xl font-semibold mb-4">Feedback</h3>
                     <form action="./Client/feedback.php" method="POST">
-                        <input type="text" name="name" class="text-input block w-full mb-4 p-2 rounded-lg"
-                            placeholder="Your Name">
-                        <input type="email" name="email" class="text-input block w-full mb-4 p-2 rounded-lg"
-                            placeholder="Your Email Address">
-                        <textarea name="message" class="text-input block w-full mb-4 p-2 rounded-lg resize-none h-32"
+                        <input type="text" name="name" class="form-control mb-3" placeholder="Your Name">
+                        <input type="email" name="email" class="form-control mb-3" placeholder="Your Email Address">
+                        <textarea name="message" class="form-control mb-3" rows="4"
                             placeholder="Your Message"></textarea>
-                        <button type="submit"
-                            class=" bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600">Send</button>
+                        <button type="submit" class="btn btn-danger btn-block">Send</button>
                     </form>
                 </div>
             </div>
         </div>
-        <div class="footer-bottom text-center mt-8">
-            &copy; 2024 JobNexa. All rights reserved.
-        </div>
+        <!-- <div class="footer-bottom text-center mt-4">
+            <p>&copy; 2024 JobNexa. All rights reserved.</p>
+        </div> -->
     </footer>
 
 </body>

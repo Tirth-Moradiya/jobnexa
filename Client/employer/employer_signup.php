@@ -4,7 +4,7 @@ include "../../Connection/db_conn.php"; // Include your database connection file
 // Check if form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Retrieve form data
-    $eid = $_POST["employer_id"];
+    // $eid = $_POST["employer_id"];
     $ename = $_POST["employer_name"];
     $eemail = $_POST["employer_email"];
     $epassword = $_POST["employer_password"];
@@ -13,8 +13,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $website = $_POST["website"];
 
     // Prepare and bind the SQL statement
-    $stmt = $conn->prepare("INSERT INTO employer (eid, ename, eemail, epassword, ecompany, industryname, website) VALUES (?, ?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("sssssss", $eid, $ename, $eemail, $epassword, $ecompany, $industryname, $website);
+    $stmt = $conn->prepare("INSERT INTO employer ( ename, eemail, epassword, ecompany, industryname, website) VALUES (?, ?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("ssssss", $ename, $eemail, $epassword, $ecompany, $industryname, $website);
 
     // Execute the query
     if ($stmt->execute()) {

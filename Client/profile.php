@@ -63,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
     <?php include "./header.php"; ?>
     <div class="bg-blue-50 min-h-screen flex items-center justify-center font-serif">
-        <div class="w-full max-w-3xl p-8 bg-white my-5 shadow-lg rounded-lg mt-28">
+        <div class="w-full max-w-lg p-8 bg-white my-5 shadow-lg rounded-lg mt-10">
             <h1 class="text-3xl font-bold text-center mb-8">Profile</h1>
             <form action="profile.php" method="POST" class="space-y-4">
                 <?php if ($user_type === 'user'): ?>

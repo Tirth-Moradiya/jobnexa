@@ -5,11 +5,11 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 
-<body class="font-sans bg-gray-100">
+<body class="font-sans bg-blue-50">
     <?php include "../header.php"; ?>
 
-    <div class="mx-auto px-4 py-10 font-serif text-blue-900">
-        <h1 class="text-3xl text-center pt-24 font-bold mb-4">Update Job Details</h1>
+    <div class="container mx-auto px-4 py-10 font-serif text-blue-900">
+        <h1 class="text-3xl text-center pt-0 font-bold mb-4">Update Job Details</h1>
         <?php
         // Include database connection file
         include "../../Connection/db_conn.php";
@@ -24,7 +24,7 @@
             // Display the edit form
             ?>
             <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post"
-                class="space-y-4 border p-10 rounded-lg  bg-white w-3/5 mx-auto">
+                class="space-y-4 border p-6 rounded-lg bg-white lg:w-2/3 mx-auto">
                 <div>
                     <label class="text-black block mb-1 font-bold">Job Title:</label>
                     <input type="text" name="jtitle" value="<?php echo $job['jtitle']; ?>"

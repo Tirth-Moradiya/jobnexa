@@ -4,7 +4,7 @@ include "../../Connection/db_conn.php"; // Include your database connection file
 // Check if form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Retrieve form data
-    $uid = $_POST["user_id"];
+    // $uid = $_POST["user_id"];
     $uname = $_POST["user_name"];
     $uemail = $_POST["user_email"];
     $upassword = $_POST["user_password"];
@@ -15,8 +15,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $ucity = $_POST["user_city"];
 
     // Prepare and bind the SQL statement
-    $stmt = $conn->prepare("INSERT INTO user (uid, uname, uemail, upassword, ugender, uphonenumber, uaddress, ustate, ucity) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("sssssssss", $uid, $uname, $uemail, $upassword, $ugender, $uphonenumber, $uaddress, $ustate, $ucity);
+    $stmt = $conn->prepare("INSERT INTO user ( uname, uemail, upassword, ugender, uphonenumber, uaddress, ustate, ucity) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("ssssssss", $uname, $uemail, $upassword, $ugender, $uphonenumber, $uaddress, $ustate, $ucity);
 
     // Execute the query
     if ($stmt->execute()) {

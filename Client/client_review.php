@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    <section class="py-24 font-serif">
-        <div class="max-w-full mx-auto px-5 sm:px-6 lg:px-8">
+    <section class="py-24 font-serif bg-white">
+        <div class="max-w-full mx-auto px-5 sm:px-6 lg:px-8 ">
             <h2 class="text-3xl font-extrabold text-blue-900 sm:text-4xl text-center mb-6">What Our Clients Say</h2>
             <p class="mt-4 text-lg text-blue-800 text-center mb-10">Hear from some of our satisfied clients.</p>
 
@@ -96,4 +98,5 @@
     </section>
 
 </body>
+
 </html>

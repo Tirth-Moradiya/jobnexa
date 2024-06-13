@@ -56,26 +56,23 @@ if (!$result) {
 // Close database connection
 $conn->close();
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
-
 
 <head>
     <title>Manage Job Applications</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 
-
-<body class="bg-white">
+<body class="bg-blue-50">
     <?php include "../header.php"; ?>
 
-    <div class="container mx-auto py-28 text-blue-900 font-serif">
+    <div class="container mx-auto py-10 text-blue-900 font-serif">
         <h2 class="text-3xl font-semibold text-center mb-6">Manage Job Applications</h2>
         <?php if ($result->num_rows > 0): ?>
-            <div class="overflow-x-auto">
-                <table class="table-auto mx-auto mt-5 w-5/6 border-collapse border border-gray-300">
-                    <thead class="bg-gray-200 text-black ">
+            <div class="overflow-x-auto w-5/6 mx-auto mt-20">
+                <table class="table-auto w-full border-collapse border border-gray-300">
+                    <thead class="bg-gray-200 text-black">
                         <tr>
                             <th class="px-4 py-2">Job Title</th>
                             <th class="px-4 py-2">Applicant Name</th>
@@ -86,7 +83,7 @@ $conn->close();
                             <th class="px-4 py-2">Action</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody class="bg-white">
                         <?php while ($row = $result->fetch_assoc()): ?>
                             <tr class="text-center">
                                 <td class="border px-4 py-2"><?php echo htmlspecialchars($row['job_title']); ?></td>
@@ -106,13 +103,17 @@ $conn->close();
                                         <select name="new_status"
                                             class="border border-gray-300 rounded py-1 px-2 focus:outline-none focus:border-blue-500">
                                             <option value="Pending" <?php if ($row['application_status'] === 'Pending')
-                                                echo 'selected'; ?>>Pending</option>
+                                                echo 'selected'; ?>>
+                                                Pending</option>
                                             <option value="Reviewed" <?php if ($row['application_status'] === 'Reviewed')
-                                                echo 'selected'; ?>>Reviewed</option>
+                                                echo 'selected'; ?>>
+                                                Reviewed</option>
                                             <option value="Accepted" <?php if ($row['application_status'] === 'Accepted')
-                                                echo 'selected'; ?>>Accepted</option>
+                                                echo 'selected'; ?>>
+                                                Accepted</option>
                                             <option value="Rejected" <?php if ($row['application_status'] === 'Rejected')
-                                                echo 'selected'; ?>>Rejected</option>
+                                                echo 'selected'; ?>>
+                                                Rejected</option>
                                         </select>
                                         <button type="submit" name="update_status"
                                             class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded focus:outline-none focus:shadow-outline">Update</button>
@@ -132,6 +133,5 @@ $conn->close();
         <?php endif; ?>
     </div>
 </body>
-
 
 </html>

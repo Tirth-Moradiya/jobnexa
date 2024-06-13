@@ -32,7 +32,6 @@ $total_applications = $application_row['total_applications'];
 // Close database connection
 $conn->close();
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -48,7 +47,7 @@ $conn->close();
 <body>
 
   <?php include "sidebar.php"; ?>
-  <div class="content ml-80 p-4 mt-5 text-blue-900">
+  <div class="content ml-0 md:ml-80 p-4 mt-5 text-blue-900">
     <h2 class="text-3xl font-bold mb-6">Dashboard Overview</h2>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -70,7 +69,7 @@ $conn->close();
       </div>
     </div>
 
-    <div class="chart-container mt-8">
+    <div class="chart-container ">
       <canvas id="dashboardChart"></canvas>
     </div>
   </div>

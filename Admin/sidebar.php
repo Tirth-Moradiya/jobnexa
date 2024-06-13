@@ -97,7 +97,7 @@
 
 
       <a href="../Client/logout.php"
-        class="mt-60 text-center inline-block w-full py-1 px-3 bg-red-500 text-white rounded hover:bg-red-600">Logout</a>
+        class="mt-44 text-center inline-block w-full py-1 px-3 bg-red-500 text-white rounded hover:bg-red-600">Logout</a>
     </div>
 
     <div class="ml-1/5 w-4/5 p-8 pt-0">

@@ -59,25 +59,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 $conn->close();
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | JobNexa</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 
-
-<body class="bg-blue-50 h-screen flex items-center justify-center font-serif">
-    <div class="container flex gap-52 justify-center items-center h-full">
-        <div class="left-side w-fit flex-1 p-8 text-center">
+<body class="bg-blue-50 min-h-screen flex flex-col justify-center items-center font-serif">
+    <div class="container flex flex-col lg:flex-row gap-4 justify-center items-center max-w-screen-lg">
+        <div class="left-side flex-1 p-8 text-center">
             <h1 class="text-4xl font-bold text-blue-900 mb-4">Welcome to JobNexa</h1>
             <p class="text-xl text-gray-700">Find the best job opportunities!</p>
         </div>
-        <div class="w-full lg:w-1/2  max-w-md p-8 bg-white rounded-lg shadow-lg mx-auto lg:mr-10">
+        <div class="mt-8 w-full lg:w-1/2 max-w-md p-8 bg-white rounded-lg shadow-lg">
             <h2 class="text-2xl font-bold text-white bg-blue-900 p-4 rounded-t-lg text-center mb-4">Login</h2>
             <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" class="space-y-4">
                 <div class="form-group">
@@ -111,131 +109,3 @@ $conn->close();
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-<!-- body {
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
-    margin: 0;
-    padding: 0;
-}
-
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-.left-side {
-    flex: 1;
-    padding: 20px;
-    text-align: center;
-}
-
-
-.right-side {
-    flex: 0.5;
-    margin-right: 200px;
-    width: 500px;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.title {
-    color: black;
-}
-
-.subtitle {
-    color: #555;
-}
-
-.header {
-    background-color: black;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    margin-top: 0;
-}
-
-.form {
-    padding: 20px;
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group input[type="text"],
-.form-group input[type="password"],
-.form-group select {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    font-size: 16px;
-    outline: none;
-}
-
-.form-group select {
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    background-repeat: no-repeat;
-    background-position: right 10px top 50%;
-    background-size: 12px auto;
-}
-
-.btn {
-    width: 100%;
-    padding: 12px;
-    background-color: black;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
-}
-
-.btn:hover {
-    background-color: gray;
-}
-
-/* Your existing CSS styles here */
-
-.form-links-fp , .form-links-signup {
-    text-align: center;
-    justify-content: space-between;
-    margin-top: 10px;
-}
-
-.form-links-fp  a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-.form-links-signup  a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-.form-links-fp a:hover {
-    text-decoration: underline;
-}
-
-.form-links-signup a:hover {
-    text-decoration: underline;
-} -->
