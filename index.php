@@ -15,8 +15,9 @@
     <?php include "./Client/hero_section.php"; ?>
     <?php include "./Client/search_job.php"; ?>
     <?php include "./Client/company_banner.php"; ?>
-    <?php include "./Client/how_it_work.php"; ?>
     <?php include "./Client/latest-job.php"; ?>
+    <?php include "./Client/how_it_work.php"; ?>
+
     <?php include "./Client/why_jobnexa.php"; ?>
     <?php include "./Client/client_review.php"; ?>
 

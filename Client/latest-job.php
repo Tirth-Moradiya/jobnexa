@@ -6,7 +6,7 @@
 </head>
 
 <body>
-    <div class="mx-auto px-4 py-10 font-serif text-blue-900 bg-white">
+    <div class="mx-auto px-4 py-10 font-serif text-blue-900 bg-gradient-to-r from-blue-50 to-indigo-100">
         <h2 class="text-3xl font-semibold text-center mb-8">Latest job opportunities</h2>
 
         <div class="grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-3 px-4 md:px-10">

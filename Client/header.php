@@ -104,7 +104,8 @@ if (!empty($logged_in_user)) {
     <div id="mobile-menu" class="md:hidden hidden bg-blue-900 text-white px-4 py-2">
         <ul class="space-y-2">
             <li><a href="../index.php" class="text-white no-underline hover:text-gray-200">Home</a></li>
-            <li><a href="./Client/about.php" class="text-white no-underline hover:text-gray-200">About Us</a></li>
+            <li><a href="why_jobnexa.php#why-choose-us" class="text-white no-underline hover:text-gray-200">About us</a>
+            </li>
             <li><a href="#" class="text-white no-underline hover:text-gray-200">Blog</a></li>
 
             <?php if (!empty($logged_in_user)): ?>

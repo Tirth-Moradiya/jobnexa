@@ -1,6 +1,17 @@
 <?php
 // Include database connection file
 include "../Connection/db_conn.php";
+// Start the session
+session_start();
+
+
+// Check if admin is logged in
+if (!isset($_SESSION['username'])) {
+    // If not, redirect to the login page
+    header("Location: index.php");
+    exit();
+}
+
 
 // Fetch all categories
 $query = "SELECT * FROM category";

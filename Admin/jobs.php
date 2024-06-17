@@ -1,6 +1,15 @@
 <?php
 ob_start(); // Start output buffering
 include "../Connection/db_conn.php";
+session_start();
+
+// Check if admin is logged in
+if (!isset($_SESSION['username'])) {
+    // If not, redirect to the login page
+    header("Location: index.php");
+    exit();
+}
+
 
 // Check if the delete button is clicked
 if (isset($_POST['delete_job'])) {

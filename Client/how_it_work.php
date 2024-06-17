@@ -11,7 +11,7 @@
 
 <body>
 
-    <section class="py-10 sm:py-20 font-serif bg-gradient-to-r from-blue-50 to-indigo-100 text-blue-900">
+    <section class="py-10 sm:py-20 font-serif bg-white text-blue-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold">How It Works?</h2>
             <p class="mt-4 text-base sm:text-lg md:text-xl">Only with a few clicks, you can search and apply for the job

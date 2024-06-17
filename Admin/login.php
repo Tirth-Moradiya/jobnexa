@@ -17,6 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (mysqli_num_rows($result) == 1) {
         // Admin exists, redirect to dashboard
         $_SESSION['username'] = $username;
+        $_SESSION['password'] = $password;
         header("Location: admin_dashboard.php");
         exit;
     } else {

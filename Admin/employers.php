@@ -1,3 +1,14 @@
+<?php
+session_start();
+
+// Check if admin is logged in
+if (!isset($_SESSION['username'])) {
+  // If not, redirect to the login page
+  header("Location: index.php");
+  exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,6 +41,8 @@
         <tbody class="divide-y divide-gray-200">
           <?php
           include "../Connection/db_conn.php";
+
+
           $sql = "SELECT * FROM employer";
           $result = $conn->query($sql);
 

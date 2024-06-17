@@ -1,6 +1,13 @@
 <?php
 include "../../Connection/db_conn.php";
+session_start();
 
+// Check if the username is set in session
+if (!isset($_SESSION['user_type']) || $_SESSION['user_type'] !== 'employer') {
+    // Redirect to login page if not logged in
+    header("Location: ../login1.php");
+    exit();
+}
 // Fetch categories from the database
 $query = "SELECT * FROM category";
 $result = $conn->query($query);

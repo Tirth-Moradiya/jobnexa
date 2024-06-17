@@ -5,6 +5,15 @@ include "../Connection/db_conn.php";
 // Start the session
 session_start();
 
+
+// Check if admin is logged in
+if (!isset($_SESSION['username'])) {
+  // If not, redirect to the login page
+  header("Location: index.php");
+  exit();
+}
+
+
 // Fetch total users
 $user_query = "SELECT COUNT(*) AS user FROM user";
 $user_result = $conn->query($user_query);

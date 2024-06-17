@@ -1,3 +1,13 @@
+<?php
+
+// Check if admin is logged in
+if (!isset($_SESSION['username'])) {
+  // If not, redirect to the login page
+  header("Location: index.php");
+  exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -59,8 +69,8 @@
             <?php
             // Start the session
             // Check if admin name is set in session
-            if (isset($_SESSION['admin_name'])) {
-              echo $_SESSION['admin_name'];
+            if (isset($_SESSION['username'])) {
+              echo $_SESSION['username'];
             }
             ?>
           </div>
@@ -96,7 +106,7 @@
       </ul>
 
 
-      <a href="../Client/logout.php"
+      <a href="logout.php"
         class="mt-44 text-center inline-block w-full py-1 px-3 bg-red-500 text-white rounded hover:bg-red-600">Logout</a>
     </div>
 

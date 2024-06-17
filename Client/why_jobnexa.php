@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <section
+    <section id="why-choose-us"
         class="why-choose-us-section font-serif text-blue-900 py-10 md:py-20 bg-gradient-to-r from-blue-50 to-indigo-100">
         <div class="mx-auto px-6 md:px-10 lg:px-20 xl:px-36">
             <h2 class="text-3xl font-semibold text-center mb-8">Why Choose JobNexa</h2>

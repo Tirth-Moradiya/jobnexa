@@ -1,6 +1,14 @@
 <?php
 // Include database connection file
 include "../../Connection/db_conn.php";
+session_start();
+
+// Check if the username is set in session
+if (!isset($_SESSION['user_type']) || $_SESSION['user_type'] !== 'user') {
+    // Redirect to login page if not logged in
+    header("Location: ../login1.php");
+    exit();
+}
 
 // Check if the form is submitted
 if (isset($_POST['submit_application'])) {

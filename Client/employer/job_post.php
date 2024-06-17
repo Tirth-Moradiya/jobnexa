@@ -1,5 +1,12 @@
 <?php
 session_start();
+
+// Check if the username is set in session
+if (!isset($_SESSION['user_type']) || $_SESSION['user_type'] !== 'employer') {
+    // Redirect to login page if not logged in
+    header("Location: ../login1.php");
+    exit();
+}
 include "../../Connection/db_conn.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -18,7 +25,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($stmt->execute()) {
         echo "New job posted successfully!";
-        header("Location:../../index.php");
     } else {
         echo "Error: " . $stmt->error;
     }

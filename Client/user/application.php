@@ -6,9 +6,9 @@ include "../../Connection/db_conn.php";
 session_start();
 
 // Check if the username is set in session
-if (!isset($_SESSION['username'])) {
+if (!isset($_SESSION['user_type']) || $_SESSION['user_type'] !== 'user') {
     // Redirect to login page if not logged in
-    header("Location: login1.php");
+    header("Location: ../login1.php");
     exit();
 }
 
@@ -67,7 +67,7 @@ $conn->close();
                                 <td class="py-3 px-6 text-left">
                                     <?php
                                     $resumePath = htmlspecialchars($row['resume_path']);
-                                    $fullPath = "../resume_folder/" . $resumePath;
+                                    $fullPath = "../../resume_folder/" . $resumePath;
                                     echo "<a href='$fullPath' class='text-blue-500 hover:underline' target='_blank'>View Resume</a>";
                                     ?>
                                 </td>

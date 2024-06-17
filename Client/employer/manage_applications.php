@@ -8,7 +8,7 @@ session_start();
 // Check if the user is logged in and is an employer
 if (!isset($_SESSION['user_type']) || $_SESSION['user_type'] !== 'employer') {
     // Redirect to login page if not logged in as an employer
-    header("Location: ../../login.php");
+    header("Location: ../login1.php");
     exit();
 }
 
@@ -93,7 +93,7 @@ $conn->close();
                                 <td class="border px-4 py-2">
                                     <?php
                                     $resumePath = htmlspecialchars($row['resume_path']);
-                                    $fullPath = "../resume_folder/" . $resumePath;
+                                    $fullPath = "../../resume_folder/" . $resumePath;
                                     echo "<a href='$fullPath' target='_blank' class='text-blue-500 hover:underline'>View Resume</a>";
                                     ?>
                                 </td>
